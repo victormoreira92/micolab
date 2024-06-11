@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af19f754-3bd0-410a-8492-0562e9a34c91" name="Changes" comment="" />
+    <list default="true" id="af19f754-3bd0-410a-8492-0562e9a34c91" name="Changes" comment="initial-commit">
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/javascript/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/shared/_footer.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/shared/_navbar.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +25,8 @@
       <list>
         <option value="Ruby Class" />
         <option value="RSpec" />
+        <option value="ERB File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -51,37 +63,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultRubyCreateTestTemplate&quot;: &quot;RSpec&quot;,
-    &quot;RSpec.Usuario Toogle desativar usuário Adicionar/Remover data_desativacao adicionar data de desativacao.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Usuario Toogle desativar usuário Desativar usuario adicionar data de desativacao.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Usuario Toogle desativar usuário Desativar usuario desativar.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Usuario Toogle desativar usuário Desativar usuario remover data de desativacao.executor&quot;: &quot;Debug&quot;,
-    &quot;RSpec.Usuario Toogle desativar usuário.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Usuario Validaçoes Não é valido sem email.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Usuario Validaçoes Não é valido sem nome.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Usuario Validaçoes É válido sem cpf.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Usuario acessa e se autentifica no sistema Usuario entra com sucesso no sistema com sucesso.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.usuario_spec.executor&quot;: &quot;Run&quot;,
-    &quot;Rails.micolab.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby Console.rails console .executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.last.introduce.type&quot;: &quot;LET&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vhmrj92/siscod&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultRubyCreateTestTemplate": "RSpec",
+    "RSpec.Usuario Toogle desativar usuário Adicionar/Remover data_desativacao adicionar data de desativacao.executor": "Run",
+    "RSpec.Usuario Toogle desativar usuário Desativar usuario adicionar data de desativacao.executor": "Run",
+    "RSpec.Usuario Toogle desativar usuário Desativar usuario desativar.executor": "Run",
+    "RSpec.Usuario Toogle desativar usuário Desativar usuario remover data de desativacao.executor": "Debug",
+    "RSpec.Usuario Toogle desativar usuário.executor": "Run",
+    "RSpec.Usuario Validaçoes Não é valido sem email.executor": "Run",
+    "RSpec.Usuario Validaçoes Não é valido sem nome.executor": "Run",
+    "RSpec.Usuario Validaçoes É válido sem cpf.executor": "Run",
+    "RSpec.Usuario acessa e se autentifica no sistema Usuario entra com sucesso no sistema com sucesso.executor": "Run",
+    "RSpec.usuario_spec.executor": "Run",
+    "Rails.micolab.executor": "Run",
+    "Ruby Console.rails console .executor": "Run",
+    "Ruby.ViewRefParam.DefaultExtension": "html.erb",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "js.last.introduce.type": "LET",
+    "last_opened_file_path": "/home/vhmrj92/siscod",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ruby.rails.projectView.checked": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/javascript" />
@@ -411,7 +424,7 @@
       <workItem from="1717762182664" duration="7412000" />
       <workItem from="1717773052175" duration="25000" />
       <workItem from="1717934637486" duration="4725000" />
-      <workItem from="1718111119986" duration="2183000" />
+      <workItem from="1718111119986" duration="14405000" />
     </task>
     <task id="LOCAL-00001" summary="Modulo Usuario: adicionando o gems">
       <option name="closed" value="true" />
@@ -445,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714525899853</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="initial-commit">
+      <option name="closed" value="true" />
+      <created>1718113378250</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718113378250</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +488,8 @@
     <MESSAGE value="Modulo Usuario: criando view usuário" />
     <MESSAGE value="Modulo Usuario: adicionando datatable" />
     <MESSAGE value="Modulo Usuario: Criando perfis e associando ao usuário" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modulo Usuario: Criando perfis e associando ao usuário" />
+    <MESSAGE value="initial-commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial-commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/micolab@Usuario_Toogle_desativar_usuário_Adicionar_Remover_data_desativacao_adicionar_data_de_desativacao.rcov" NAME="Usuario Toogle desativar usuário Adicionar/Remover data_desativacao adicionar data de desativacao Coverage Results" MODIFIED="1717721480427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="micolab" />
