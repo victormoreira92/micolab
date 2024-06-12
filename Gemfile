@@ -52,6 +52,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "devise", require: false
+gem "cancancan"
+
 
 
 group :development, :test do
