@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Usuario.find_or_create_by(nome: "Admin", email: 'micolab@micolab.com', encrypted_password: 'micolab123')

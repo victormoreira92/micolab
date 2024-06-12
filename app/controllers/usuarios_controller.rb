@@ -1,4 +1,4 @@
-class UsuarioController < ApplicationController
+class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,6 +6,10 @@ class UsuarioController < ApplicationController
   end
 
   def show
+  end
+
+  def new
+    @usuario = Usuario.new
   end
 
   def create
