@@ -6,4 +6,6 @@ class StatusAmostra < ApplicationRecord
     descartada: 2,
     criopreservada: 3
   }
+
+  validates :descricao, presence: true
 end

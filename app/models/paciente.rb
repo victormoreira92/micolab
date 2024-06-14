@@ -1,7 +1,8 @@
 class Paciente < ApplicationRecord
 
-  validades :nome, presence: true 
+  validates :nome, presence: true 
   validates :data_nascimento, presence: true
+  validates :nome_mae, presence: true
 
   enum etnia:{
     amarela: 0,
@@ -10,4 +11,6 @@ class Paciente < ApplicationRecord
     preta: 3,
     nao_especificado: 4
   }
+
+  
 end
