@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :status_amostra do
     situacao { 1 }
-    descricao { "MyString" }
+    descricao { Faker::Lorem.paragraph }
   end
 end

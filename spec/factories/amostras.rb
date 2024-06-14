@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :amostra do
-    numero_interno { "MyString" }
+    numero_interno { Faker::Alphanumeric.alphanumeric(number: 3)  }
     tipo_material { 1 }
-    data_coleta { "2024-06-14 12:36:25" }
-    data_processamento { "2024-06-14 12:36:25" }
-    data_recebimento { "2024-06-14 12:36:25" }
+    data_coleta { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default)  }
+    data_processamento { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) }
+    data_recebimento { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) }
   end
 end
