@@ -6,4 +6,7 @@ FactoryBot.define do
     data_processamento { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) }
     data_recebimento { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default) }
   end
+  trait :sem_data_coleta do 
+    data_coleta { nil }
+  end
 end
