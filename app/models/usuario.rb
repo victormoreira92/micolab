@@ -4,5 +4,17 @@ class Usuario < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum perfil:{
+    admin: 0,
+    analista: 1,
+    tecnico: 2,
+    secretario: 3
+  }
+
+  validates :nome, presence: true
+  validates :email, presence: :true
+  validates :password, presence: true 
+  validates :password_confirmation, presence: true 
+
   
 end
