@@ -1,0 +1,2 @@
+class StatusAmostra < ApplicationRecord
+end
