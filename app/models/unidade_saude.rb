@@ -1,0 +1,3 @@
+class UnidadeSaude < ApplicationRecord
+  
+end
