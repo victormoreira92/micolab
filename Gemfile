@@ -59,7 +59,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "pry"
   gem "faker"
-  gem "factory_bot"
+  gem "factory_bot_rails"
   gem "rspec-rails"
   gem "awesome_print"
 end
