@@ -1,5 +1,7 @@
 class Paciente < ApplicationRecord
 
+  has_many :amostras
+  
   validates :nome, presence: true 
   validates :data_nascimento, presence: true
   validates :nome_mae, presence: true

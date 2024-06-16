@@ -1,5 +1,7 @@
 class StatusAmostra < ApplicationRecord
 
+  has_many :amostras
+
   enum situacao: {
     cadastrada: 0,
     processada: 1,
