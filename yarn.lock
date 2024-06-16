@@ -184,6 +184,29 @@ concat-map@0.0.1:
   resolved "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
 
+datatables.net-bs4@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/datatables.net-bs4/-/datatables.net-bs4-2.0.8.tgz"
+  integrity sha512-AUnimPFMpduIPuU/w0C35EEtRdpblsQ/1Qr3OXN1qX5JjDC4ZWK63Xbhqd1XoA/jubDUjXHkxQVfCqhtygS4rw==
+  dependencies:
+    datatables.net "2.0.8"
+    jquery ">=1.7"
+
+datatables.net-dt@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/datatables.net-dt/-/datatables.net-dt-2.0.8.tgz"
+  integrity sha512-9SG5MWJXq2IQSJWuH+2DvK/9AXduZr0wI/lQbrtBBd18Ck5sO8z3EXxy5wYxxjTFZ9Z+wl0lHsO//qR8QYmWIA==
+  dependencies:
+    datatables.net "2.0.8"
+    jquery ">=1.7"
+
+datatables.net@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.npmjs.org/datatables.net/-/datatables.net-2.0.8.tgz"
+  integrity sha512-4/2dYx4vl975zQqZbyoVEm0huPe61qffjBRby7K7V+y9E+ORq4R8KavkgrNMmIgO6cl85Pg4AvCbVjvPCIT1Yg==
+  dependencies:
+    jquery ">=1.7"
+
 debug@^4:
   version "4.3.5"
   resolved "https://registry.npmjs.org/debug/-/debug-4.3.5.tgz"
@@ -362,7 +385,7 @@ is-number@^7.0.0:
   resolved "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
-"jquery@1.9.1 - 3":
+jquery@^3.7.1, jquery@>=1.7, "jquery@1.9.1 - 3":
   version "3.7.1"
   resolved "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz"
   integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
@@ -462,7 +485,7 @@ pify@^2.3.0:
   resolved "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz"
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
 
-popper.js@^1.16.0:
+popper.js@^1.16.0, popper.js@^1.16.1:
   version "1.16.1"
   resolved "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
   integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==

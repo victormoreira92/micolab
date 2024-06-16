@@ -1,3 +1,6 @@
+
+const { document } = require("postcss");
+
 var myModal = document.getElementById("modal");
 var myInput = document.getElementById('myInput');
 
