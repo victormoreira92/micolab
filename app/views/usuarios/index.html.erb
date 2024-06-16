@@ -1,1 +1,29 @@
+<div class="container py-2">
+    <h3>Usuários</h3>
+    <div>
+     <table id="dttb" class="table" style="width:100%">
+      <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Registro</th>
+            <th>Ações</th>
+        </tr>
+      </thead>
+        <tbody>
+        <% @usuarios.each do |usuario| %>
+            <tr>
+                <td><%= usuario.nome%></td>
+                <td><%= usuario.email%></td>
+                <td><%= usuario.registro%></td>
+                <td>
+                    <%= link_to "Ver", usuario_path(usuario.id), class:"btn btn-info" %>
+                    <%= link_to "Editar", edit_usuario_path(usuario.id), class:"btn btn-warning" %>
+                </td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
+</div>
 
