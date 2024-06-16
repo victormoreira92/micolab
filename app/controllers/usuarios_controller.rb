@@ -1,5 +1,6 @@
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
     @usuarios = Usuario.all
@@ -21,6 +22,9 @@ class UsuariosController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @usuario.update(params[:usuario])
       redirect_to @usuario
@@ -30,7 +34,6 @@ class UsuariosController < ApplicationController
   end
 
   def toogle_desativacao
-
   end
 
   private

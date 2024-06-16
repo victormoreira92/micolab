@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
-class Ability
+class UsuariosAbility
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(usuario)
+
+    return unless usuario.admin?
+    can :manage, :all
+
+    can :manage, Usuario, id: usuario.id
+    
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
