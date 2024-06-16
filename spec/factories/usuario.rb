@@ -11,15 +11,15 @@ FactoryBot.define do
     nome { nil }
   end
 
-  trait :email do 
+  trait :sem_email do 
     email { nil }
   end
 
-  trait :password do 
+  trait :sem_senha do 
     password { nil }
   end
 
-  trait :password_confirmation do 
+  trait :sem_confirmacao_senha do 
     password_confirmation { nil }
   end
 
