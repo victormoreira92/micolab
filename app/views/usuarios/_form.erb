@@ -1,0 +1,57 @@
+<%= form_for(@usuario) do |f| %>
+  <% if @usuario.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+  <% end %>
+  <ul>
+    <% @usuario.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+  <div class="container">
+      <!-- Campos -->
+    <div class="row py-3">
+      <div class="col">
+        <%= f.label :nome, 'Nome *', class:"font-weigth-bold" %>
+        <%= f.text_field :nome, class:"form-control" %>
+      </div>
+    </div>
+
+     <div class="row py-3">
+      <div class="col">
+          <%= f.label :email, 'Email', class:"font-weigth-bold" %>
+          <%= f.email_field :email, class:"form-control"%>
+        </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col">
+          <%= f.label :registro, 'Registro', class:"font-weigth-bold" %>
+          <%= f.text_field :registro, class:"form-control" %>
+      </div>
+
+      <div class="col">
+          <%= f.label :telefone, 'Telefone', class:"font-weigth-bold" %>
+          <%= f.telephone_field :telefone, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col">
+        <%= f.label :password, 'Senha', class:"font-weigth-bold" %>
+        <%= f.password_field :password, class:"form-control"%>
+      </div>
+      <div class="col">
+          <%= f.label :password_confirmation, 'Confirmação de Senha', class:"font-weigth-bold" %>
+          <%= f.password_field :password_confirmation, class:"form-control"%>
+      </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col">
+        <%= f.submit 'Enviar', class:"btn btn-lg btn-info"%>
+      </div>
+    </div>
+
+  </div>
+<% end %>
