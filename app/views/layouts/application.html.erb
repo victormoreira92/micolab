@@ -14,21 +14,36 @@
   </head>
 
   <body>
-      <%flash.each  do |key,msg| %>
-      <div class="alert alert-info">
-        <%= msg %>
-        <button type="button" class="btn-close" data-dismiss="alert" aria-hidden="true">×</button>
-      </div>
+    <main id="wrapper">
 
-  <% end %>
-    <main class="h-100">
-
-    <%= render partial: 'shared/navbar' %>
     <%= render partial: 'shared/sidebar' %>
+    <section id="page-content-wrapper" class="w-100">
+    <%= render partial: 'shared/navbar' %>
+
+    <% flash.each do |key, message| %>
+      <% if message.kind_of?(Array) %>
+        <div class="alert <%= flash_class(key) %> alert-dismissible text-center">
+          <ul>
+            <% message.each do |messagem| %>
+              <li><%= messagem %></li>
+            <% end %>
+          </ul>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        </div>
+
+
+      <% else %>
+        <div class="alert <%= flash_class(key) %> alert-dismissible text-center">
+          <%= message %>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        </div>
+      <% end %>
+
+    <% end %>
 
       <%= yield %>
 
-      
+    <section>  
     </main>
     <%= render partial: 'shared/footer' %>
 
