@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
     nome_controller = params[:controller].to_s
     ability_controller = "#{nome_controller.titleize.delete(' ')}Ability".constantize
     @current_ability = ability_controller.new(usuario_atual)
+
   end
 
 end

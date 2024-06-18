@@ -16,9 +16,11 @@ class UsuariosController < ApplicationController
   def create
     @usuario = Usuario.new(params[:usuario])
     if @usuario.save
-      redirect_to @usuario
+      flash[:success] = t('Usuário criado com sucesso')
+      format.html { redirect_to usuarios_path }
     else
-      render 'new'
+      flash[:error] = @usuario.errors.full_messages
+      format.html { render :new, status: :unprocessable_entity }
     end
   end
 
@@ -26,10 +28,14 @@ class UsuariosController < ApplicationController
   end
 
   def update
-    if @usuario.update(params[:usuario])
-      redirect_to @usuario
-    else
-      render 'edit'
+    respond_to do |format|
+      if @usuario.update(usuario_params)
+        flash[:success] = t('activerecord.success.messages.update', model: 'Usuário')
+        format.html { redirect_to usuario_path(@usuario.id) }
+      else
+        flash[:error] = @usuario.errors.full_messages
+        format.html { redirect_to edit_usuario_path }
+      end
     end
   end
 
@@ -41,5 +47,9 @@ class UsuariosController < ApplicationController
   def set_usuario
     @usuario = Usuario.find(params[:id])
   end
+
+  def usuario_params
+    params.require(:usuario).permit(:nome, :telefone, :registro, :email, :password, :password_confirmation)
+  end 
 
 end
