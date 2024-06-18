@@ -9,6 +9,14 @@ pt-BR:
         password_confirmation: 'Confirmação de Senha'
         registro: 'Registro Profissional'
         telefone: 'Número de telefone'
+        perfil:
+          admin: 'Administrador'
+          analista: 'Analista de Laboratório'
+          tecnico: 'Técnico'
+          secretario: 'Secretário'
+    success:
+      messages:
+        update: '%{model} atualizado com sucesso'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
