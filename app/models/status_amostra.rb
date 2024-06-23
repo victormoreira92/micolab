@@ -3,10 +3,12 @@ class StatusAmostra < ApplicationRecord
   has_many :amostras
 
   enum situacao: {
-    cadastrada: 0,
-    processada: 1,
-    descartada: 2,
-    criopreservada: 3
+    amostra_cadastrada: 0,
+    amostra_recebida_laboratorio: 1,
+    amostra_processada: 2,
+    amostra_liberada: 3,
+    amostra_descartada: 4,
+    amostra_criopreservada: 3
   }
 
   validates :descricao, presence: true
