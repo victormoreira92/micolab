@@ -1,6 +1,7 @@
 class Paciente < ApplicationRecord
 
   has_many :amostras
+  has_many :unidade_saudes, through: :unidade_pacientes
   
   validates :nome, presence: true 
   validates :data_nascimento, presence: true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_15_234113) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_23_143329) do
   create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "numero_interno"
     t.integer "tipo_material"
@@ -44,6 +44,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_15_234113) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "unidade_pacientes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "unidade_saudes_id", null: false
+    t.bigint "paciente_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_unidade_pacientes_on_paciente_id"
+    t.index ["unidade_saudes_id"], name: "index_unidade_pacientes_on_unidade_saudes_id"
+  end
+
   create_table "unidade_saudes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nome"
     t.string "cnes"
@@ -70,4 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_15_234113) do
 
   add_foreign_key "amostras", "pacientes"
   add_foreign_key "amostras", "status_amostras"
+  add_foreign_key "unidade_pacientes", "pacientes"
+  add_foreign_key "unidade_pacientes", "unidade_saudes", column: "unidade_saudes_id"
 end
