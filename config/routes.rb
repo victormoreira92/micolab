@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :usuarios
 
-  resources :usuarios, except: :destroy
+  resources :usuarios, except: [:destroy] 
+
+  devise_for :usuarios do
+    get '/usuarios/sign_out' => 'devise/sessions#destroy'
+  end
 
   get 'home/index'
 
