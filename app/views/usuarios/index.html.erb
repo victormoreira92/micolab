@@ -1,6 +1,11 @@
 <div class="container py-2">
-    <h3>Usuários</h3>
-    <p class="text">Lista de usuários cadastrados no sistema</p>
+    <div class="row">
+     <div class="col pb-3">
+        <h3>Usuários</h3>
+        <p class="text">Lista de usuários cadastrados no sistema</p>
+        <%= link_to " + Adicionar Usuários", new_usuario_path, class:"btn btn-success" %>
+     </div>
+    </div>
     <div>
      <table id="dttb" class="table" style="width:100%">
       <thead>

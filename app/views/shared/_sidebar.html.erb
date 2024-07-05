@@ -10,6 +10,13 @@
         Usuários
       </a>
     </li>
+    <% if can?(:manage, @usuario) %>
+      <li>
+        <a href=<%= unidades_saude_index_path %> class="nav-link text-white">
+          Unidades
+        </a>
+      </li>
+    <% end %>
     <li>
       <a href="#" class="nav-link text-white">
         Amostras

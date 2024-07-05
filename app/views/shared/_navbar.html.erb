@@ -32,7 +32,7 @@
               <span>Usuario</span>
               <div class="dropdown-menu m-3" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href=<%= usuario_path(session[:usuario_id])%>>Editar</a>
-                <%= link_to "Sair",destroy_usuario_session_path, method: :delete, class: "dropdown-item" %>
+                <%= link_to "Sair",destroy_usuario_session_path, :method => :delete, class: "dropdown-item" %>
               </div>
             </div>
           </li>

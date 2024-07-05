@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
-  before_action :set_usuario, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+  before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   def index
     @usuarios = Usuario.all
@@ -15,12 +15,14 @@ class UsuariosController < ApplicationController
 
   def create
     @usuario = Usuario.new(params[:usuario])
-    if @usuario.save
-      flash[:success] = t('Usuário criado com sucesso')
-      format.html { redirect_to usuarios_path }
-    else
-      flash[:error] = @usuario.errors.full_messages
-      format.html { render :new, status: :unprocessable_entity }
+    respond_to do |format|
+      if @usuario.save
+          flash[:success] = t('Usuário criado com sucesso')
+          format.html { redirect_to usuarios_path(@usuario) }
+      else
+          flash[:error] = @usuario.errors.full_messages
+          format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -31,7 +33,7 @@ class UsuariosController < ApplicationController
     respond_to do |format|
       if @usuario.update(usuario_params)
         flash[:success] = t('activerecord.success.messages.update', model: 'Usuário')
-        format.html { redirect_to usuario_path(@usuario.id) }
+        format.html { redirect_to usuario_path(@usuario) }
       else
         flash[:error] = @usuario.errors.full_messages
         format.html { redirect_to edit_usuario_path }
@@ -49,7 +51,7 @@ class UsuariosController < ApplicationController
   end
 
   def usuario_params
-    params.require(:usuario).permit(:nome, :telefone, :registro, :email, :password, :password_confirmation)
+    params.require(:usuario).permit(:nome, :telefone, :registro, :email,:perfil, :password, :password_confirmation)
   end 
 
 end

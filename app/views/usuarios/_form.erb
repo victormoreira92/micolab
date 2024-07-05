@@ -8,7 +8,7 @@
       <li><%= error.full_message %></li>
     <% end %>
   </ul>
-  <div class="container">
+  
       <!-- Campos -->
     <div class="row py-3">
       <div class="col">
@@ -38,6 +38,10 @@
 
     <div class="row py-3">
       <div class="col">
+        <%= f.label :perfil, 'Perfil', class:"font-weigth-bold" %>
+        <%= f.select(:perfil, Usuario.perfils.keys.map {|perfil| [perfil.titleize,perfil]}) %>
+      </div>
+      <div class="col">
         <%= f.label :password, 'Senha', class:"font-weigth-bold" %>
         <%= f.password_field :password, class:"form-control"%>
       </div>
@@ -52,6 +56,5 @@
         <%= f.submit 'Enviar', class:"btn btn-lg btn-info"%>
       </div>
     </div>
-
-  </div>
+  
 <% end %>

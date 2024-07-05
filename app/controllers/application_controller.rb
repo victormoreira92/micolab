@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+  before_action do
+    resource = controller_name.singularize.to_sym
+    method = "#{resource}_params"
+    params[resource] &&= send(method) if respond_to?(method, true)
+  end
 
   def after_sign_in_path_for(usuario)
     session[:usuario_id] = usuario.id
@@ -17,6 +22,7 @@ class ApplicationController < ActionController::Base
   def usuario_logado?
     usuario_atual.present?
   end
+
 
   def current_ability
     nome_controller = params[:controller].to_s
