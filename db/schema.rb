@@ -10,62 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_23_161725) do
-  create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "numero_interno"
-    t.integer "tipo_material"
-    t.datetime "data_coleta"
-    t.datetime "data_processamento"
-    t.datetime "data_recebimento"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "status_amostra_id", null: false
-    t.bigint "paciente_id", null: false
-    t.bigint "material_biologico_id", null: false
-    t.index ["material_biologico_id"], name: "index_amostras_on_material_biologico_id"
-    t.index ["paciente_id"], name: "index_amostras_on_paciente_id"
-    t.index ["status_amostra_id"], name: "index_amostras_on_status_amostra_id"
-  end
-
-  create_table "material_biologicos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "nome"
-    t.integer "tipo"
-    t.string "codigo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pacientes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "nome"
-    t.string "cns"
-    t.string "cpf"
-    t.datetime "data_nascimento"
-    t.string "sexo"
-    t.integer "etnia"
-    t.string "nome_mae"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "status_amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "situacao"
-    t.string "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "unidade_pacientes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "unidade_saudes_id", null: false
-    t.bigint "paciente_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["paciente_id"], name: "index_unidade_pacientes_on_paciente_id"
-    t.index ["unidade_saudes_id"], name: "index_unidade_pacientes_on_unidade_saudes_id"
-  end
-
-  create_table "unidade_saudes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "nome"
-    t.string "cnes"
+ActiveRecord::Schema[7.0].define(version: 2024_07_03_150518) do
+  create_table "unidades_saude", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "unidade_nome"
+    t.string "email"
+    t.string "telefone"
+    t.string "cep"
+    t.string "municipio"
+    t.string "unidade_federativa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,7 +28,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_23_161725) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.string "nome", default: "", null: false
     t.string "registro"
     t.string "telefone"
@@ -87,9 +43,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_23_161725) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "amostras", "material_biologicos"
-  add_foreign_key "amostras", "pacientes"
-  add_foreign_key "amostras", "status_amostras"
-  add_foreign_key "unidade_pacientes", "pacientes"
-  add_foreign_key "unidade_pacientes", "unidade_saudes", column: "unidade_saudes_id"
 end
