@@ -7,7 +7,6 @@ class UsuariosAbility
 
     return unless usuario.admin?
     can :manage, :all
-
     can :manage, Usuario, id: usuario.id
     
     # Define abilities for the user here. For example:
