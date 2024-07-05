@@ -1,0 +1,17 @@
+- status: amostra_cadastrada
+  descricao: Amostra cadastrada e pronta para ser processada
+
+- status: amostra_recebida_laboratorio
+  descricao: Amostra recebida no setor componente 
+
+- status: amostra_processada
+  descricao: Amostra foi processada pelo laboratório e aguarda a liberação do resultado
+
+- status: amostra_liberada 
+  descricao: Amostra com resultado liberado
+
+- status: amostra_descartada
+  descricao: Amostra foi descartada 
+  
+- status: amostra_criopreservada
+  descricao: Amostra criopreservada  
