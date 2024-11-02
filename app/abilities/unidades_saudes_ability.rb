@@ -1,4 +1,4 @@
-class UnidadesSaudeAbility
+class UnidadesSaudesAbility
   include CanCan::Ability
   def initialize(user)
     return unless user.admin?

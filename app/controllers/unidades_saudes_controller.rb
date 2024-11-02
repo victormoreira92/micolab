@@ -1,4 +1,4 @@
-class UnidadesSaudeController < ApplicationController
+class UnidadesSaudesController < ApplicationController
   before_action :set_unidade_saude, only: %i[ show edit update destroy ]
 
   # GET /unidades_saude or /unidades_saude.json
