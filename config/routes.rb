@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  resources :unidades_saude
   root 'dashboard#index'
 
-  devise_for :usuario do
-    delete 'usuario/sign_out', :to => 'devise/sessions#destroy', :as => :destroy_usuario_session
-  end
 
+
+  devise_for :usuarios do
+    delete 'usuarios/sign_out', :to => 'devise/sessions#destroy', :as => :destroy_usuario_session
+  end
   resources :usuarios, except: [:destroy]
+
+  resources :unidades_saudes
+
 
   get 'home/index'
 

@@ -10,14 +10,102 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_03_150518) do
-  create_table "unidades_saude", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "unidade_nome"
-    t.string "email"
-    t.string "telefone"
-    t.string "cep"
-    t.string "municipio"
-    t.string "unidade_federativa"
+ActiveRecord::Schema[7.0].define(version: 2024_10_27_155122) do
+  create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "numero_amostra"
+    t.datetime "data_coleta"
+    t.string "tipo_amostra"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "status_amostra_id", null: false
+    t.bigint "material_biologico_id", null: false
+    t.index ["material_biologico_id"], name: "index_amostras_on_material_biologico_id"
+    t.index ["status_amostra_id"], name: "index_amostras_on_status_amostra_id"
+  end
+
+  create_table "informacoes_clinicas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "data_inicio_sintomas"
+    t.integer "idade_gestacional"
+    t.integer "suspeita_diagnostica"
+    t.boolean "lesao_pulmonar"
+    t.integer "tipo_lesao_pulmonar"
+    t.integer "localizacao_lesao_pulmonar"
+    t.integer "fatores_associados"
+    t.boolean "uso_antifungicos"
+    t.integer "tipo_antifungico"
+    t.integer "tipo_atividade_risco"
+    t.string "numero_prontuario"
+    t.string "ocupacao"
+    t.integer "caso"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "paciente_id", null: false
+    t.boolean "atividade_risco"
+    t.index ["paciente_id"], name: "index_informacoes_clinicas_on_paciente_id"
+  end
+
+  create_table "informacoes_domiciliares", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "municipio_paciente"
+    t.string "logradouro_paciente"
+    t.string "cep_paciente"
+    t.string "bairro_paciente"
+    t.string "estado_paciente"
+    t.integer "zona"
+    t.string "pais_paciente"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "paciente_id", null: false
+    t.index ["paciente_id"], name: "index_informacoes_domiciliares_on_paciente_id"
+  end
+
+  create_table "materiais_biologicos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nome_material_biologico"
+    t.string "sigla"
+    t.integer "tipo_material_biologico"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pacientes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nome_paciente"
+    t.string "nome_mae"
+    t.string "cpf_paciente"
+    t.datetime "data_nascimento"
+    t.integer "sexo"
+    t.integer "etnia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "idade"
+    t.integer "tipo_idade"
+  end
+
+  create_table "pacientes_unidades_saudes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "unidades_saudes_id", null: false
+    t.bigint "pacientes_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pacientes_id"], name: "index_pacientes_unidades_saudes_on_pacientes_id"
+    t.index ["unidades_saudes_id"], name: "index_pacientes_unidades_saudes_on_unidades_saudes_id"
+  end
+
+  create_table "status_amostra", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "descricao"
+    t.integer "situacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "unidades_saudes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nome", null: false
+    t.string "cnes"
+    t.string "email_unidade_saude"
+    t.string "telefone", null: false
+    t.string "endereco"
+    t.string "cep", null: false
+    t.string "complemento"
+    t.string "cidade"
+    t.string "estado"
+    t.string "pais"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,4 +131,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_03_150518) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "amostras", "materiais_biologicos", column: "material_biologico_id"
+  add_foreign_key "amostras", "status_amostra"
+  add_foreign_key "informacoes_clinicas", "pacientes"
+  add_foreign_key "informacoes_domiciliares", "pacientes"
+  add_foreign_key "pacientes_unidades_saudes", "pacientes", column: "pacientes_id"
+  add_foreign_key "pacientes_unidades_saudes", "unidades_saudes", column: "unidades_saudes_id"
 end

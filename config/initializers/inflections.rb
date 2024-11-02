@@ -16,12 +16,13 @@
 # end
 
 ActiveSupport::Inflector.inflections(:"pt-BR") do |inflect|
-  inflect.irregular "UnidadeSaude", "UnidadesSaude"
-  inflect.irregular "StatusAmostra", "StatusAmostra"
-  inflect.irregular "status", "status"
-  inflect.irregular "UnidadePaciente", "UnidadesPacientes"
-  inflect.irregular "unidade_paciente", "unidades_pacientes"
-  inflect.irregular "InformacaoClinica", "InformacoesClinicas"
+  inflect.irregular "unidade_saude", "unidades_saudes"
   inflect.irregular "informacao_clinica", "informacoes_clinicas"
+  inflect.irregular "informacao_domiciliar", "informacoes_domiciliares"
+  inflect.irregular "paciente_unidade_saude", "pacientes_unidades_saude"
+  inflect.irregular "status_amostra", "status_amostra"
+  inflect.irregular "status", "status"
+  inflect.irregular "material_biologico", "materiais_biologicos"
+
 
 end
