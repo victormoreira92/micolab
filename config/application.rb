@@ -19,6 +19,8 @@ require "devise"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module Micolab
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -35,5 +37,9 @@ module Micolab
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    console do
+      ActiveRecord::Base.connection
+    end
   end
 end
