@@ -1,35 +1,34 @@
-<div class="container py-2">
-    <div class="row">
-     <div class="col pb-3">
-        <h3>Usuários</h3>
-        <p class="text">Lista de usuários cadastrados no sistema</p>
-        <%= link_to " + Adicionar Usuários", new_usuario_path, class:"btn btn-success" %>
-     </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+               <h3 class="text-center">Lista de Usuários</h3>
+               <%= link_to " + Adicionar Usuários", new_usuario_path, class:"btn btn-success mb-5" %>
+               <table id="dttb" class="table border border-dark" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Registro</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <% @usuarios.each do |usuario| %>
+                        <tr>
+                            <td><%= usuario.nome%></td>
+                            <td><%= usuario.email%></td>
+                            <td><%= usuario.registro%></td>
+                            <td>
+                                <%= link_to "Ver", usuario_path(usuario.id), class:"btn btn-info" %>
+                                <%= link_to "Editar", edit_usuario_path(usuario.id), class:"btn btn-warning" %>
+                            </td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+        </div>
     </div>
-    <div>
-     <table id="dttb" class="table" style="width:100%">
-      <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Registro</th>
-            <th>Ações</th>
-        </tr>
-      </thead>
-        <tbody>
-        <% @usuarios.each do |usuario| %>
-            <tr>
-                <td><%= usuario.nome%></td>
-                <td><%= usuario.email%></td>
-                <td><%= usuario.registro%></td>
-                <td>
-                    <%= link_to "Ver", usuario_path(usuario.id), class:"btn btn-info" %>
-                    <%= link_to "Editar", edit_usuario_path(usuario.id), class:"btn btn-warning" %>
-                </td>
-            </tr>
-        <% end %>
-        </tbody>
-    </table>
-</div>
 </div>
 
+
+     
