@@ -1,3 +1,8 @@
-
-
-<%= button_to "Sair", destroy_usuario_session_path, :method => :delete, class: "btn btn-danger" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h6 class="font-weight-bold">Olá, <%= current_usuario.nome %></h6>
+      <p>Você está em uma área logada</p>
+    </div>
+  </div>
+</div>

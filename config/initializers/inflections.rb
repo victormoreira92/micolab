@@ -15,7 +15,7 @@
 #   inflect.acronym "RESTful"
 # end
 
-ActiveSupport::Inflector.inflections(:"pt-BR") do |inflect|
+ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular "unidade_saude", "unidades_saudes"
   inflect.irregular "informacao_clinica", "informacoes_clinicas"
   inflect.irregular "informacao_domiciliar", "informacoes_domiciliares"

@@ -131,7 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_27_155122) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "amostras", "materiais_biologicos", column: "material_biologico_id"
+  add_foreign_key "amostras", "materiais_biologicos"
   add_foreign_key "amostras", "status_amostra"
   add_foreign_key "informacoes_clinicas", "pacientes"
   add_foreign_key "informacoes_domiciliares", "pacientes"
