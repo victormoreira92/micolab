@@ -35,7 +35,7 @@
                     </li>
 
                     <li class="nav-item <%= menu_open('usuarios')%> w-100 px-3">
-                        <a href="#" class="nav-link align-middle px-0 text-white">
+                        <a href=<%= usuarios_path %> class="nav-link align-middle px-0 text-white">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Usuários</span>
                         </a>
                     </li>
@@ -45,8 +45,8 @@
                         </a>
                     </li>
 
-                    <li class="nav-item w-100 px-3">
-                        <a href="#" class="nav-link align-middle px-0 text-white">
+                    <li class="nav-item <%= menu_open('unidades_saudes')%> w-100 px-3">
+                        <a href=<%= unidades_saudes_path %> class="nav-link align-middle px-0 text-white">
                             <i class="fs-4 bi-hospital"></i> <span class="ms-1 d-none d-sm-inline">Unidades de Saúde</span>
                         </a>
                     </li>

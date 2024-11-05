@@ -1,6 +1,5 @@
 <h1>Unidade Saudes</h1>
-
-<table class="responsive nowrap table table-hover" id="dttb-unidade_saudes" data-sort="true" data-source="<%= url_for(format: :json)%>">
+<table id="dttb" class="table border border-dark" style="width:100%">
   <thead>
     <tr>
       <th data-data="unidade_nome">Unidade nome</th>
@@ -12,9 +11,24 @@
       <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
     </tr>
   </thead>
+  <tbody>
+       <% @unidades_saudes.each do |unidade_saude| %>
+          <tr>
+              <td><%= unidade_saude.nome%></td>
+              <td><%= unidade_saude.email_unidade_saude%></td>
+              <td><%= unidade_saude.telefone%></td>
+              <td><%= unidade_saude.endereco%></td>
+              <td><%= unidade_saude.cidade%></td>
+              <td>
+                  <%= link_to "Ver", unidade_saude_path(unidade_saude.id), class:"btn btn-info" %>
+                  <%= link_to "Editar", edit_unidade_saude_path(unidade_saude.id), class:"btn btn-warning" %>
+              </td>
+          </tr>
+      <% end %>
+  </tbody>
 
 </table>
 
 <br>
 
-<%= link_to 'New Unidade Saude', new_unidades_saude_path %>
+<%= link_to 'New Unidade Saude', new_unidade_saude_path %>
