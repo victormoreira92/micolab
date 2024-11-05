@@ -1,5 +1,6 @@
 class UnidadesSaudesController < ApplicationController
-  before_action :set_unidade_saude, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
+  #before_action :set_unidade_saude, only: %i[ show edit update destroy ]
 
   def index
     @unidades_saudes = UnidadeSaude.all
