@@ -80,12 +80,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_27_155122) do
   end
 
   create_table "pacientes_unidades_saudes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "unidades_saudes_id", null: false
-    t.bigint "pacientes_id", null: false
+    t.bigint "unidade_saude_id", null: false
+    t.bigint "paciente_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pacientes_id"], name: "index_pacientes_unidades_saudes_on_pacientes_id"
-    t.index ["unidades_saudes_id"], name: "index_pacientes_unidades_saudes_on_unidades_saudes_id"
+    t.index ["paciente_id"], name: "index_pacientes_unidades_saudes_on_paciente_id"
+    t.index ["unidade_saude_id"], name: "index_pacientes_unidades_saudes_on_unidade_saude_id"
   end
 
   create_table "status_amostra", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -135,6 +135,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_27_155122) do
   add_foreign_key "amostras", "status_amostra"
   add_foreign_key "informacoes_clinicas", "pacientes"
   add_foreign_key "informacoes_domiciliares", "pacientes"
-  add_foreign_key "pacientes_unidades_saudes", "pacientes", column: "pacientes_id"
-  add_foreign_key "pacientes_unidades_saudes", "unidades_saudes", column: "unidades_saudes_id"
+  add_foreign_key "pacientes_unidades_saudes", "pacientes"
+  add_foreign_key "pacientes_unidades_saudes", "unidades_saudes"
 end
