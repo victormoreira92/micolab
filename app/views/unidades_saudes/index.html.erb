@@ -21,7 +21,7 @@
               <td><%= unidade_saude.cidade%></td>
               <td>
                   <%= link_to "Ver", unidade_saude_path(unidade_saude.id), class:"btn btn-info" %>
-                  <%= link_to "Editar", edit_unidade_saude_path(unidade_saude.id), class:"btn btn-warning" %>
+                  <%= if @c %><%= link_to "Editar", edit_unidade_saude_path(unidade_saude.id), class:"btn btn-warning" %>
               </td>
           </tr>
       <% end %>
