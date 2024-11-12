@@ -63,7 +63,15 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "awesome_print"
+  gem "rubocop"
 end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'webdrivers', '~> 4.0', require: false
+end
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
