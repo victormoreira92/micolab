@@ -16,5 +16,5 @@ class TecnicoAbility < PerfilGeralAbility
     can :read, UnidadeSaude
   end
 
-  
+
 end

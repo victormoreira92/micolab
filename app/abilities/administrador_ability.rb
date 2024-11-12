@@ -2,7 +2,8 @@ class AdministradorAbility < PerfilGeralAbility
   attr_accessor :usuario
 
   ABILITIES_POR_CONTROLLER = {
-    "usuarios": 'permissoes_usuarios'
+    "usuarios": 'permissoes_usuarios',
+    "unidades_saudes": 'permissoes_unidades_saudes'
   }.freeze
 
   def initialize(usuario, _controller = nil, _path = nil, _full_path = nil)
@@ -11,4 +12,9 @@ class AdministradorAbility < PerfilGeralAbility
     metodo_permissoes = ABILITIES_POR_CONTROLLER.stringify_keys[_controller]
     send(metodo_permissoes) if metodo_permissoes
   end
+
+  def permissoes_unidades_saudes
+    can :manage, UnidadeSaude
+  end
+
 end
