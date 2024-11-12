@@ -5,7 +5,21 @@ FactoryBot.define do
     password { 'micolab123' }
     password_confirmation { 'micolab123' }
     email { Faker::Internet.email  }
+    perfil { 0 }
   end
+
+  trait :analista do
+    perfil { :analista }
+  end
+
+  trait :tecnico do
+    perfil { :tecnico }
+  end
+
+  trait :secretario do
+    perfil { :secretario }
+  end
+
 
   trait :sem_confirmacao_senha do
     password_confirmation { nil }
