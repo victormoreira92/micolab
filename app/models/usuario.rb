@@ -13,6 +13,8 @@ class Usuario < ApplicationRecord
   }
 
   validates :nome, presence: true
+  validates :email, uniqueness: true
+  validates_confirmation_of :encrypted_password
 
 
 
