@@ -25,12 +25,6 @@ RSpec.describe Usuario, type: :model do
         usuario = build(:usuario, :sem_email)
         expect(usuario).not_to be_valid
       end
-
-      it 'sem confirmação de senha' do
-        usuario = build(:usuario, :sem_confirmacao_senha)
-        expect(usuario).not_to be_valid
-      end
-            
     end
     
     

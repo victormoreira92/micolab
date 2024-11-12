@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_usuario!
   skip_before_action :authenticate_usuario!, if: :devise_controller?
-  
+  rescue_from CanCan::AccessDenied, with: :acesso_negado
 
   def after_sign_in_path_for(usuario)
     session[:usuario_id] = usuario.id
@@ -36,9 +36,13 @@ class ApplicationController < ActionController::Base
     full_path = request.fullpath.to_s
     nome_controller = params[:controller]
     perfil = usuario_atual.perfil
-    binding.pry
     ability_controller = "#{perfil.titleize.delete(' ')}Ability".constantize
     @current_ability = ability_controller.new(usuario_atual, nome_controller, path, full_path)
+  end
+
+  private
+  def acesso_negado
+    redirect_to '/403'
   end
 
 end
