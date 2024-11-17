@@ -1,5 +1,5 @@
-<h1>Unidade Saudes</h1>
-<table id="dttb" class="table border border-dark" style="width:100%">
+<h3 class="text-center">Listagem de Unidade de Saude</h3>
+<!-- <table id="dttb" class="table border border-dark" style="width:100%">
   <thead>
     <tr>
       <th data-data="unidade_nome">Unidade nome</th>
@@ -21,14 +21,32 @@
               <td><%= unidade_saude.cidade%></td>
               <td>
                   <%= link_to "Ver", unidade_saude_path(unidade_saude.id), class:"btn btn-info" %>
-                  <%= if @c %><%= link_to "Editar", edit_unidade_saude_path(unidade_saude.id), class:"btn btn-warning" %>
               </td>
           </tr>
       <% end %>
   </tbody>
 
-</table>
-
+</table> -->
+    <table id="dttb" class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th> Nome</th> 
+          <th> Endereço</th>
+          <th> Telefone</th>                   
+          <th> Email</th>                   
+        </tr>
+      </thead>
+      <tbody>
+        <% @unidades_saudes.each do |unidade| %>
+          <tr>
+            <td><%= link_to unidade.nome, unidade %></td>
+            <td><%= link_to unidade.endereco, unidade %></td>
+            <td><%= link_to unidade.telefone, unidade %></td>
+            <td><%= link_to unidade.email_unidade_saude, unidade %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 <br>
 
 <%= link_to 'New Unidade Saude', new_unidade_saude_path %>
