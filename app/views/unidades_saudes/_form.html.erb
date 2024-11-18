@@ -1,47 +1,115 @@
-<%= form_with(model: unidade_saude) do |form| %>
-  <% if unidade_saude.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(unidade_saude.errors.count, "error") %> prohibited this unidade_saude from being saved:</h2>
+<h5 class="text-center p-2">Preencha os dados abaixo</h5>
+<div class="card col-12">
+  <%= form_with(model: unidade_saude, local: true, class: 'form-horizontal',id:"unidade-saude-form") do |form| %>
+    <div class="card-body register-card-body">
 
-      <ul>
-        <% unidade_saude.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <div class="mb-2">
+
+      <h6 class="text-left"><i class="fs-4 bi-hospital"></i> Contato</h6>
+        <hr class="mb-4"/>
+
+
+        <div class="row">
+          <div class="input-group mb-3 col-10">
+            <%= form.text_field :nome, placeholder: 'Nome da Unidade', class: "form-control", autofocus: true %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-hospital"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+
+          <div class="input-group mb-3 col-3">
+            <%= form.text_field :telefone, placeholder: 'Telefone', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-telephone"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-5">
+            <%= form.email_field :email_unidade_saude, placeholder: 'Email', class: "form-control" %>
+            <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-envelope-at"></span>
+            </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div>
+
+        <h4 class="text-left mb-2"><i class="fs-4 bi-geo"></i>  Endereço</h4>
+        <hr class="mb-4"/>
+
+
+        <div class="row">
+          <div class="input-group mb-3 col-6">
+            <%= form.text_field :endereco, placeholder: 'Endereco', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-geo-alt"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-2">
+            <%= form.text_field :complemento, placeholder: 'Complemento', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-geo-alt"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-4">
+            <%= form.text_field :cidade, placeholder: 'Cidade', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-geo-alt"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="input-group mb-3 col-5">
+          <%= form.text_field :estado, placeholder: 'Estado', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-geo-alt"></span>
+              </div>
+            </div>
+        </div>
+
+        <div class="input-group mb-3 col-5">
+          <%= form.text_field :cep, placeholder: 'CEP', class: "form-control campo_cep" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-geo-alt"></span>
+              </div>
+            </div>
+        </div>
+      </div>
+
     </div>
+
+    <div class="card-footer row">
+      <div class="actions col-12 text-center">
+        <%= form.submit class: 'btn btn-info' %>
+      </div>
+
+    </div>
+
   <% end %>
+</div>
 
-  <div>
-    <%= form.label :unidade_nome, style: "display: block" %>
-    <%= form.text_field :nome %>
-  </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email_unidade_saude %>
-  </div>
-
-  <div>
-    <%= form.label :telefone, style: "display: block" %>
-    <%= form.text_field :telefone %>
-  </div>
-
-  <div>
-    <%= form.label :cep, style: "display: block" %>
-    <%= form.text_field :cep %>
-  </div>
-
-  <div>
-    <%= form.label :cidade, style: "display: block" %>
-    <%= form.text_field :cidade %>
-  </div>
-
-  <div>
-    <%= form.label :estado, style: "display: block" %>
-    <%= form.text_field :estado %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
