@@ -4,7 +4,7 @@
       <h3 class="card-title"><%= @unidade_saude.nome %></h3>
     </div>
     <div class="card-body">
-      <h6 class="text-left"><i class="fs-4 bi-hospital"></i> Contato</h6>
+      <h6 class="text-left font-weight-bold"><i class="fs-4 bi-hospital"></i> Contato</h6>
       <hr class="mb-2">
 
       <dl class="row">
@@ -14,7 +14,7 @@
         <dd class="col-sm-8">Ativo</dd>
         <dt class="col-sm-4">E-Mail:</dt>
         <dd class="col-sm-8"><%= @unidade_saude.email_unidade_saude %></dd>
-        <dt class="col-sm-4">Telefone</dt>
+        <dt class="col-sm-4">Telefone:</dt>
         <dd class="col-sm-8"><%= @unidade_saude.telefone %></dd>
       </dl>
 
@@ -22,16 +22,16 @@
       <hr class="mb-2">
 
       <dl class="row">
-        <dt class="col-sm-4">Rua:</dt>
-        <dd class="col-sm-8"><%= @unidade_saude.endereco %></dd>
-        <dt class="col-sm-4">Complemento:</dt>
-        <dd class="col-sm-8"><%= @unidade_saude.complemento %></dd>
-        <dt class="col-sm-4">UF:</dt>
-        <dd class="col-sm-8"><%= @unidade_saude.estado %></dd>
-        <dt class="col-sm-4">Cidade:</dt>
-        <dd class="col-sm-8"><%= @unidade_saude.cidade %></dd>
-        <dt class="col-sm-4">CEP:</dt>
-        <dd class="col-sm-8"><%= @unidade_saude.cep %></dd>
+        <dt class="col-sm-5">Rua:</dt>
+        <dd class="col-sm-7"><%= @unidade_saude.endereco %></dd>
+        <dt class="col-sm-5">Complemento:</dt>
+        <dd class="col-sm-7"><%= @unidade_saude.complemento %></dd>
+        <dt class="col-sm-5">UF:</dt>
+        <dd class="col-sm-7"><%= @unidade_saude.estado %></dd>
+        <dt class="col-sm-5">Cidade:</dt>
+        <dd class="col-sm-7"><%= @unidade_saude.cidade %></dd>
+        <dt class="col-sm-5">CEP:</dt>
+        <dd class="col-sm-7"><%= @unidade_saude.cep %></dd>
       </dl>
     </div>
 

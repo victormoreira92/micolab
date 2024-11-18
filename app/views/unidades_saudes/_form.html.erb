@@ -5,7 +5,7 @@
 
       <div class="mb-2">
 
-      <h6 class="text-left"><i class="fs-4 bi-hospital"></i> Contato</h6>
+      <h4 class="text-left"><i class="fs-4 bi-hospital"></i> Contato</h4>
         <hr class="mb-4"/>
 
 
@@ -81,7 +81,7 @@
 
 
       <div class="row">
-        <div class="input-group mb-3 col-5">
+        <div class="input-group mb-3 col-4">
           <%= form.text_field :estado, placeholder: 'Estado', class: "form-control" %>
             <div class="input-group-append">
               <div class="input-group-text">
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <div class="input-group mb-3 col-5">
+        <div class="input-group mb-3 col-4">
           <%= form.text_field :cep, placeholder: 'CEP', class: "form-control campo_cep" %>
             <div class="input-group-append">
               <div class="input-group-text">
@@ -98,6 +98,14 @@
               </div>
             </div>
         </div>
+        <div class="input-group mb-3 col-4">
+            <%= form.text_field :pais, placeholder: 'Pais', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-geo-alt"></span>
+              </div>
+            </div>
+          </div>
       </div>
 
     </div>

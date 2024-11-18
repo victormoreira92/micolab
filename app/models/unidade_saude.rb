@@ -6,4 +6,6 @@ class UnidadeSaude < ApplicationRecord
   validates :endereco, :nome, :cep, :email_unidade_saude, :telefone,
             :cidade, :estado, :pais, presence: true
 
+  
+
 end
