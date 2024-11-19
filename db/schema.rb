@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_27_155122) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_18_023612) do
   create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "numero_amostra"
     t.datetime "data_coleta"
@@ -80,17 +80,24 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_27_155122) do
   end
 
   create_table "pacientes_unidades_saudes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "unidades_saudes_id", null: false
-    t.bigint "pacientes_id", null: false
+    t.bigint "unidade_saude_id", null: false
+    t.bigint "paciente_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pacientes_id"], name: "index_pacientes_unidades_saudes_on_pacientes_id"
-    t.index ["unidades_saudes_id"], name: "index_pacientes_unidades_saudes_on_unidades_saudes_id"
+    t.index ["paciente_id"], name: "index_pacientes_unidades_saudes_on_paciente_id"
+    t.index ["unidade_saude_id"], name: "index_pacientes_unidades_saudes_on_unidade_saude_id"
   end
 
   create_table "status_amostra", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "descricao"
     t.integer "situacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "status_exames", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "etapa"
+    t.string "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -135,6 +142,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_27_155122) do
   add_foreign_key "amostras", "status_amostra"
   add_foreign_key "informacoes_clinicas", "pacientes"
   add_foreign_key "informacoes_domiciliares", "pacientes"
-  add_foreign_key "pacientes_unidades_saudes", "pacientes", column: "pacientes_id"
-  add_foreign_key "pacientes_unidades_saudes", "unidades_saudes", column: "unidades_saudes_id"
+  add_foreign_key "pacientes_unidades_saudes", "pacientes"
+  add_foreign_key "pacientes_unidades_saudes", "unidades_saudes"
 end

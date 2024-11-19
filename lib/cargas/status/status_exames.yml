@@ -1,0 +1,15 @@
+- etapa: em_analise
+  descricao: Exame em análise 
+
+- etapa: reprocessamento
+  descricao: Exame em reprocessamento  
+
+- etapa: realizado
+  descricao: Exame realizado e com resultado
+
+- etapa: aguardando_nova_amostra 
+  descricao: Aguardando o envio de nova amostra
+
+- etapa: nao_realizado
+  descricao: Exame não realizado 
+  
