@@ -1,12 +1,11 @@
-- status: cadastrado
+- etapa: cadastrado
   descricao: 'Resultado Cadastrado'
 
-- status: em_revisao
+- etapa: em_revisao
   descricao: 'Resultado em Revisão'
 
-- status: visualizado
+- etapa: visualizado
   descricao: 'Resultado Visualizado'
 
-
-- status: liberado
+- etapa: liberado
   descricao: 'Resultado Liberado'

@@ -20,11 +20,4 @@ FactoryBot.define do
     etapa { :visualizado }
   end
 
-  trait :sem_etapa do
-    etapa { nil }
-  end
-
-  trait :sem_descricao do
-    descricao { nil }
-  end
 end

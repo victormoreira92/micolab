@@ -3,7 +3,9 @@ namespace :db do
     desc 'Popula o banco com os modelos de Status'
     task status: :environment do
       arquivos = {
-        'lib/cargas/status/status_exames.yml' => StatusExame
+        'lib/cargas/status/status_exames.yml' => StatusExame,
+        'lib/cargas/status/status_resultados.yml' => StatusResultado
+
       }
 
       arquivos.keys.each do |arquivo|

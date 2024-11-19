@@ -10,12 +10,12 @@ RSpec.describe StatusResultado, type: :model do
 
     context 'não é válido' do
       it 'sem etapa' do
-        status_resultado = build(:status_resultado, :sem_etapa)
+        status_resultado = build(:status_resultado, etapa: nil)
         expect(status_resultado).not_to be_valid
       end
 
       it 'sem descrição' do
-        status_resultado = build(:status_resultado, :sem_descricao)
+        status_resultado = build(:status_resultado, descricao: nil)
         expect(status_resultado).not_to be_valid
       end
     end
