@@ -1,0 +1,2 @@
+class StatusResultado < ApplicationRecord
+end
