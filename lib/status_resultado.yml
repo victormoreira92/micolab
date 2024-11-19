@@ -1,0 +1,12 @@
+- status: cadastrado
+  descricao: 'Resultado Cadastrado'
+
+- status: em_revisao
+  descricao: 'Resultado em Revisão'
+
+- status: visualizado
+  descricao: 'Resultado Visualizado'
+
+
+- status: liberado
+  descricao: 'Resultado Liberado'
