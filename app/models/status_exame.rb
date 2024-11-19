@@ -8,5 +8,5 @@ class StatusExame < ApplicationRecord
     nao_realizado: 4
   }
 
-  validates :etapa, :descricao, presence: true 
+  validates :etapa, :descricao, presence: true
 end
