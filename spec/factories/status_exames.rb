@@ -4,6 +4,14 @@ FactoryBot.define do
     descricao { "MyString" }
   end
 
+  trait :sem_etapa do
+    etapa { nil }
+  end
+
+  trait :sem_descricao do
+    descricao { nil }
+  end
+
   trait :em_analise do
     etapa { 0 }
   end
