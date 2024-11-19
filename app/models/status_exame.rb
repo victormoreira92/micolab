@@ -1,0 +1,2 @@
+class StatusExame < ApplicationRecord
+end
