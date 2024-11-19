@@ -1,0 +1,11 @@
+- etapa: cadastrado
+  descricao: 'Resultado Cadastrado'
+
+- etapa: em_revisao
+  descricao: 'Resultado em Revisão'
+
+- etapa: visualizado
+  descricao: 'Resultado Visualizado'
+
+- etapa: liberado
+  descricao: 'Resultado Liberado'
