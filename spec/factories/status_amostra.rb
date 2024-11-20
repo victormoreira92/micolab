@@ -4,9 +4,7 @@ FactoryBot.define do
     situacao { 0 }
   end
 
-  trait :sem_descricao do
-    descricao { nil }
-  end
+
 
   trait :sem_situacao do
     situacao { nil }

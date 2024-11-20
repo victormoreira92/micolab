@@ -12,7 +12,7 @@ FactoryBot.define do
     descricao { nil }
   end
 
-  trait :em_analise do
+  trait :exame_em_analise do
     etapa { 0 }
   end
 
