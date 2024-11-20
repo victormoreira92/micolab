@@ -1,0 +1,111 @@
+<div class="container-md d-flex justify-content-center align-items-center">
+  <div class="card col-12">
+      <h5 class="card-header">Dados do Paciente</h5>
+    <div class="card-body">
+      <!-- Dados do Paciente -->
+     <div class="p-2 bg-secondary bg-opacity-5 border rounded-end">
+        <h6 class="text-left font-weight-bold text-white"><i class="fs-4 bi-geo"></i>Dados do Paciente</h6>
+      </div>
+
+      <dl class="row py-2">
+        <dt class="col-sm-4">Nome de Paciente:</dt>
+        <dd class="col-sm-8"><%= @paciente.nome_paciente %></dd>
+        <dt class="col-sm-4">Sexo:</dt>
+        <dd class="col-sm-7"><%= @paciente.sexo %></dd>
+        <dt class="col-sm-4">Etnia:</dt>
+        <dd class="col-sm-7"><%= @paciente.etnia %></dd>
+        <dt class="col-sm-4">CPF:</dt>
+        <dd class="col-sm-7"><%= @paciente.cpf_paciente %></dd>
+        <dt class="col-sm-4">Data Nascimento:</dt>
+        <dd class="col-sm-7"><%= @paciente.data_nascimento %></dd>
+      </dl>
+
+      <!-- Informações Clínicas -->
+      <div class="p-2 bg-secondary bg-opacity-5 border rounded-end">
+        <h6 class="text-left font-weight-bold text-white"><i class="fs-4 bi-geo"></i>Informações Clínicas</h6>
+      </div>
+      <div class="pt-4">
+        <h6 class="font-weight-bold">Suspeita Diagnótica</h6>
+        <hr class="border">
+        <dl class="row py-2">
+          <dt class="col-sm-4">Data Inicio de Sintomas:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.data_inicio_sintomas %></dd>
+          <dt class="col-sm-4">Suspeita:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.suspeita_diagnostica %></dd>
+          <dt class="col-sm-4">Fatores Associados:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.fatores_associados %></dd>
+          <dt class="col-sm-4">Idade Gestacional:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.idade_gestacional %></dd>
+          <dt class="col-sm-4">Tipo de caso:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.caso %></dd>
+          <dt class="col-sm-4">Número de Prontuário:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.numero_prontuario %></dd>
+        </dl>
+      </div>
+
+      <div class="pt-1">
+        <h6 class="font-weight-bold">Lesão Pulmonar</h6>
+        <hr class="border">
+        <dl class="row py-2">
+          <dt class="col-sm-4">Lesão Pulmonar:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.lesao_pulmonar %></dd>
+          <dt class="col-sm-4">Localização da Lesão Pulmonar:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.localizacao_lesao_pulmonar %></dd>
+        </dl>
+      </div>
+
+       <div class="pt-1">
+        <h6 class="font-weight-bold">Uso de Antifúngicos</h6>
+        <hr class="border">
+        <dl class="row py-3">
+          <dt class="col-sm-4">Uso de Antifúngicos:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.uso_antifungicos %></dd>
+          <dt class="col-sm-4">Tipo de Antifúngicos:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.tipo_antifungico %></dd>
+        </dl>
+      </div>
+      <div class="pt-1">
+        <h6 class="font-weight-bold">Atividade de Risco</h6>
+        <hr class="border">
+        <dl class="row py-2">
+          <dt class="col-sm-4">Tipo de Atividade de Risco:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.tipo_atividade_risco %></dd>
+          <dt class="col-sm-4">Atividade de Risco:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.atividade_risco %></dd>
+          <dt class="col-sm-4">Tipo de Antifúngicos:</dt>
+          <dd class="col-sm-7"><%= @paciente.informacoes_clinicas.first.ocupacao %></dd>
+        </dl>
+      </div>
+
+      <!-- Informações Domiciliares -->
+      <div class="p-2 bg-secondary bg-opacity-5 border rounded-end">
+        <h6 class="text-left font-weight-bold text-white"><i class="fs-4 bi-geo"></i>Informações Domiciliares</h6>
+      </div>
+
+      <dl class="row py-3">
+          <dt class="col-sm-4">Município de Origem:</dt>
+          <dd class="col-sm-8"><%= @paciente.informacoes_domiciliares.first.municipio_paciente %></dd>
+          <dt class="col-sm-4">Rua:</dt>
+          <dd class="col-sm-8"><%= @paciente.informacoes_domiciliares.first.logradouro_paciente %></dd>
+          <dt class="col-sm-4">CEP:</dt>
+          <dd class="col-sm-8"><%= @paciente.informacoes_domiciliares.first.cep_paciente %></dd>
+          <dt class="col-sm-4">Bairro:</dt>
+          <dd class="col-sm-8"><%= @paciente.informacoes_domiciliares.first.bairro_paciente %></dd>
+          <dt class="col-sm-4">Zona de Residência:</dt>
+          <dd class="col-sm-8"><%= @paciente.informacoes_domiciliares.first.zona %></dd>
+          <dt class="col-sm-4">País:</dt>
+          <dd class="col-sm-8"><%= @paciente.informacoes_domiciliares.first.pais_paciente %></dd>
+        </dl>
+    
+    </div>
+
+    <div class="card-footer d-flex justify-content-center align-items-center">
+        <%= link_to "Editar Paciente", edit_paciente_path(@paciente), class: "btn btn-warning mr-2" %> |
+        <%= link_to "Desabilitar Paciente", "#", class:"btn btn-danger ml-2" %>
+    </div>
+    <div class="row ml-1 mb-1">
+    </div>
+  <div>
+</div>
+<%= link_to "Back to unidade saudes", unidade_saude_path %>
+</div>
