@@ -8,9 +8,11 @@ class PacientesController < ApplicationController
   def show; end
 
   def new
+    @paciente = Paciente.new
   end
 
   def create
+    binding.pry
   end
 
   def edit
@@ -22,6 +24,8 @@ class PacientesController < ApplicationController
   private
 
   def paciente_params
-    params.require(:paciente).permit(:nome_paciente)
+    params.require(:paciente).permit(:nome_paciente, :nome_mae, :cpf_paciente, :data_nascimento, :sexo, :etnia,
+                                     amostras_attributes: %i[numero_amostra data_coleta tipo_amostra status_amostra_id
+                                                             material_biologico_id])
   end
 end

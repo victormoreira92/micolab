@@ -3,6 +3,8 @@ class Paciente < ApplicationRecord
   has_many :unidades_saudes, through: :pacientes_unidades_saudes
   has_many :informacoes_clinicas
   has_many :informacoes_domiciliares
+  has_many :amostras
+  accepts_nested_attributes_for :amostras
   validates :nome_mae, :nome_paciente, :data_nascimento, :sexo, presence: true
 
   enum etnia: {
@@ -23,7 +25,4 @@ class Paciente < ApplicationRecord
     meses: 1,
     anos: 2
   }
-
-
-
 end
