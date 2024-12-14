@@ -19,6 +19,12 @@ pt-BR:
         estado_paciente: "Estado do Paciente"
         pais_paciente: "País do Paciente"
         zona: "Zona Domiciliar"
+        zona:
+          urbana: 'Urbana'
+          periurbana: 'Periurbana'
+          rural: 'Rural'
+          silvestre: 'Silvestre'
+          ignorado: 'Ignorado'
       informacao_clinica:
         data_inicio_sintomas: "Data de Início dos Sintomas"
         idade_gestacional: "Idade Gestacional"
