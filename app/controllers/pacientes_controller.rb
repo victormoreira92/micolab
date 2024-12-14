@@ -12,7 +12,7 @@ class PacientesController < ApplicationController
   end
 
   def create
-    binding.pry
+
   end
 
   def edit
