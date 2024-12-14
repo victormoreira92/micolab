@@ -57,7 +57,8 @@ gem 'cocoon'
 gem 'select2-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
+gem 'draper'
+gem 'cpf_cnpj'
 
 
 group :development, :test do
