@@ -21,11 +21,11 @@ class UnidadesSaudesController < ApplicationController
 
     respond_to do |format|
       if @unidade_saude.save
-        format.html { redirect_to unidade_saude_url(@unidade_saude), notice: "Unidade saude was successfully created." }
-        format.json { render :show, status: :created, location: @unidade_saude }
+        flash[:success] = t('activerecord.success.messages.cadastro', model: UnidadeSaude.model_name.human)
+        format.html { redirect_to unidade_saude_path(@unidade_saude) }
       else
+        flash[:error] = @unidade_saude.errors.full_messages
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @unidade_saude.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -33,12 +33,20 @@ class UnidadesSaudesController < ApplicationController
   def update
     respond_to do |format|
       if @unidade_saude.update(unidade_saude_params)
-        format.html { redirect_to unidade_saude_url(@unidade_saude), notice: "Unidade saude was successfully updated." }
-        format.json { render :show, status: :ok, location: @unidade_saude }
+        flash[:success] = t('activerecord.success.messages.update', model: UnidadeSaude.model_name.human)
+        format.html { redirect_to unidade_saude_path(@unidade_saude) }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @unidade_saude.errors, status: :unprocessable_entity }
+        flash[:error] = @unidade_saude.errors.full_messages
+        format.html { render :new, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def obter_endereco
+    endereco = Brazil::Cep.fetch(params[:cep])
+    binding.pry
+    respond_to do |format|
+      format.json { render json: endereco.to_json }
     end
   end
 
@@ -48,6 +56,7 @@ class UnidadesSaudesController < ApplicationController
     end
 
     def unidade_saude_params
-      params.require(:unidade_saude).permit(:unidade_nome, :email, :telefone, :cep, :municipio, :unidade_federativa)
+      params.require(:unidade_saude).permit(:nome, :cnes, :email_unidade_saude, :telefone, :cep, :cidade, :pais,
+                                            :estado, :endereco, :complemento)
     end
 end
