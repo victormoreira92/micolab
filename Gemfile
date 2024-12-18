@@ -63,6 +63,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "awesome_print"
   gem "rubocop"
+  gem 'brazil-cep'
 end
 
 group :test do
