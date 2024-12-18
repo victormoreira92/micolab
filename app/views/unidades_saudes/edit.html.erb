@@ -1,7 +1,10 @@
-<h1>Edição de Unidades de Saúde</h1>
+<h3 class="text-center">Edição de Unidade de Saúde</h3>
+<p class="text-center p-2">Preencha os dados abaixo</p>
 
 <%= render "form", unidade_saude: @unidade_saude %>
 
-<br>
+<div class="row px-3 py-5">
+  <%= link_to 'Voltar', unidades_saudes_path, class: "btn btn-info" %>
+</div>
 
 

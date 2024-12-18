@@ -1,16 +1,15 @@
-<h5 class="text-center p-2">Preencha os dados abaixo</h5>
 <div class="card col-12">
   <%= form_with(model: unidade_saude, local: true, class: 'form-horizontal',id:"unidade-saude-form") do |form| %>
     <div class="card-body register-card-body">
 
       <div class="mb-2">
 
-      <h6 class="text-left"><i class="fs-4 bi-hospital"></i> Contato</h6>
+      <h5 class="text-left"><i class="bi bi-building-fill"></i> Dados de Unidade de Saúde</h5>
         <hr class="mb-4"/>
 
 
         <div class="row">
-          <div class="input-group mb-3 col-10">
+          <div class="input-group mb-3 col-12">
             <%= form.text_field :nome, placeholder: 'Nome da Unidade', class: "form-control", autofocus: true %>
             <div class="input-group-append">
               <div class="input-group-text">
@@ -21,10 +20,17 @@
         </div>
 
         <div class="row">
-
+          <div class="input-group mb-3 col-4">
+            <%= form.text_field :cnes, placeholder: 'Número de CNES', class: "form-control campo_cnes", autofocus: true %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-hospital"></span>
+              </div>
+            </div>
+          </div>
 
           <div class="input-group mb-3 col-3">
-            <%= form.text_field :telefone, placeholder: 'Telefone', class: "form-control" %>
+            <%= form.text_field :telefone, placeholder: 'Telefone', class: "form-control campo_telefone" %>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fs-4 bi-telephone"></span>
@@ -44,59 +50,86 @@
       </div>
       <div>
 
-        <h4 class="text-left mb-2"><i class="fs-4 bi-geo"></i>  Endereço</h4>
+        <h5 class="text-left mb-2"><i class="bi bi-geo-alt-fill"></i> Endereço de Unidade de Saúde</h5>
         <hr class="mb-4"/>
-
-
         <div class="row">
-          <div class="input-group mb-3 col-6">
-            <%= form.text_field :endereco, placeholder: 'Endereco', class: "form-control" %>
+          <div class="input-group mb-3 col-6 ">
+            <%= form.text_field :cep, class: "form-control campo_cep", placeholder: 'CEP' %>
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fs-4 bi-geo-alt"></span>
+                <span class="bi bi-geo-alt-fill"></span>
               </div>
             </div>
           </div>
-
-          <div class="input-group mb-3 col-2">
-            <%= form.text_field :complemento, placeholder: 'Complemento', class: "form-control" %>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fs-4 bi-geo-alt"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="input-group mb-3 col-4">
-            <%= form.text_field :cidade, placeholder: 'Cidade', class: "form-control" %>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fs-4 bi-geo-alt"></span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="input-group mb-3 col-5">
-          <%= form.text_field :estado, placeholder: 'Estado', class: "form-control" %>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fs-4 bi-geo-alt"></span>
-              </div>
-            </div>
+          <button class="actions btn btn-info mb-3 botao_cep">
+              <i class="bi bi-geo-alt-fill"></i> Obter Endereço
+          </button>
         </div>
 
-        <div class="input-group mb-3 col-5">
-          <%= form.text_field :cep, placeholder: 'CEP', class: "form-control campo_cep" %>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fs-4 bi-geo-alt"></span>
-              </div>
+
+        </div>
+        
+      <div class='row'>
+        <div class="input-group mb-3 col-6">
+          <%= form.text_field :endereco, class: "form-control dado_endereco_rua",
+                              placeholder: 'Endereço' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="bi bi-geo-alt-fill"></span>
             </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-3">
+          <%= form.text_field :complemento, class: "form-control ",
+                              placeholder: 'Complemento' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="bi bi-geo-alt-fill"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-3">
+          <%= form.text_field :bairro, class: "form-control dado_endereco_bairro",
+                              placeholder: 'Bairro' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="bi bi-geo-alt-fill"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-6">
+          <%= form.text_field :cidade, class: "form-control dado_endereco_cidade",
+                              placeholder: 'Cidade' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="bi bi-geo-alt-fill"></span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="input-group mb-3 col-3">
+          <%= form.text_field :estado, class: "form-control dado_endereco_estado",
+                              placeholder: 'Estado' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="bi bi-geo-alt-fill"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-3">
+          <select select class="form-control" name="unidade_saude[pais]" id="unidade_saude_pais">
+            <option value="Brasil" selected>Brasil</option>
+          </select>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="bi bi-geo-alt-fill"></span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -104,7 +137,7 @@
 
     <div class="card-footer row">
       <div class="actions col-12 text-center">
-        <%= form.submit class: 'btn btn-info' %>
+        <%= form.submit class: 'btn btn-primary' %>
       </div>
 
     </div>
