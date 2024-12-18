@@ -37,6 +37,10 @@ pt-BR:
       material_biologico:
         nome_material_biologico: "Nome de Material Biológico"
         sigla: "Sigla de Material Biológico"
+    success:
+      messages:
+        cadastro: '%{model} cadastrado com sucesso'
+        atualizado: '%{model} atualizado com sucesso'
     errors:
       models:
         informacao_clinica:
