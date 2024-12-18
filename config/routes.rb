@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   end
   resources :usuarios, except: [:destroy]
 
-  resources :unidades_saudes, except: [:destroy]
+  resources :unidades_saudes, except: [:destroy] do
+    collection do
+      get :obter_endereco
+    end
+  end
 
   get '/403', to: 'errors#acesso_negado'
 
