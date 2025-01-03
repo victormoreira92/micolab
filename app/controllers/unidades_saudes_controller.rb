@@ -44,7 +44,6 @@ class UnidadesSaudesController < ApplicationController
 
   def obter_endereco
     endereco = Brazil::Cep.fetch(params[:cep])
-    binding.pry
     respond_to do |format|
       format.json { render json: endereco.to_json }
     end
