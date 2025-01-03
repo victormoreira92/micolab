@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'errors/acesso_negado'
+  get 'errors/erro_interno'
+  get 'errors/pagina_nao_encontrada'
   root 'dashboard#index'
 
 
@@ -8,7 +11,13 @@ Rails.application.routes.draw do
   end
   resources :usuarios, except: [:destroy]
 
-  resources :unidades_saudes
+  resources :unidades_saudes, except: [:destroy] do
+    collection do
+      get :obter_endereco
+    end
+  end
+
+  get '/403', to: 'errors#acesso_negado'
 
 
   get 'home/index'

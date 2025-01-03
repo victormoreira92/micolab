@@ -51,8 +51,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "cancancan"
-gem 'jquery-datatables'
+gem 'cancancan'
 gem 'devise'
 
 group :development, :test do
@@ -63,7 +62,17 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "awesome_print"
+  gem "rubocop"
+  gem 'brazil-cep'
+  gem 'byebug'
 end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'webdrivers', '~> 4.0', require: false
+end
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]

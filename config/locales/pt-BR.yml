@@ -2,80 +2,112 @@
 pt-BR:
   activerecord:
     models:
-      usuario: 'Usuario'
+      unidade_saude: "Unidades de Saúde"
     attributes:
-      usuario:
-        password: 'Senha'
-        password_confirmation: 'Confirmação de Senha'
-        registro: 'Registro Profissional'
-        telefone: 'Número de telefone'
-        perfil:
-          admin: 'Administrador'
-          analista: 'Analista de Laboratório'
-          tecnico: 'Técnico'
-          secretario: 'Secretário'
+      unidade_saude:
+        email_unidade_saude: "Email de Unidade de Saúde"
+        cnes: "Cadastro Nacional de Estabelecimentos de Saúde"
+      paciente:
+        nome_mae: "Nome da Mãe do Paciente"
+        nome_paciente: "Nome do Paciente"
+        data_nascimento: "Data nascimento do Paciente"
+      informacao_domiciliar:
+        municipio_paciente: "Município do Paciente"
+        logradouro_paciente: "Logradouro do Paciente"
+        cep_paciente: "CEP do Paciente"
+        bairro_paciente: "Bairro do Paciente"
+        estado_paciente: "Estado do Paciente"
+        pais_paciente: "País do Paciente"
+        zona: "Zona Domiciliar"
+      informacao_clinica:
+        data_inicio_sintomas: "Data de Início dos Sintomas"
+        idade_gestacional: "Idade Gestacional"
+        suspeita_diagnostica: "Suspeita Diagnóstica"
+        lesao_pulmonar: "Presença de lesão pulmonar"
+        tipo_lesao_pulmonar: "Tipo de lesão pulmonar"
+        localizacao_lesao_pulmonar: "Localização de Lesão pulmonar"
+        fatores_associados: "Fatores associados"
+        uso_antifungicos: "Uso de antifúngicos"
+        atividade_risco: "Atividade de Risco"
+        tipo_antifungico: "Tipo de antifungico"
+        tipo_atividade_risco: "Tipo de Ativadade de Risco"
+        numero_prontuario: "Número de Prontuário"
+        ocupacao: "Ocupação"
+        caso: "Caso Clínico"
+      material_biologico:
+        nome_material_biologico: "Nome de Material Biológico"
+        sigla: "Sigla de Material Biológico"
     success:
       messages:
-        update: '%{model} atualizado com sucesso'
+        cadastro: '%{model} cadastrado com sucesso'
+        atualizado: '%{model} atualizado com sucesso'
     errors:
+      models:
+        informacao_clinica:
+          attributes:
+            idade_gestacional:
+              paciente_sexo_masculino: 'Idade gestacional não pode ser associada a um paciente masculino.'
+            lesao_pulmonar:
+              lesao_pulmonar_sem_descricao: 'Tipo de lesão pulmonar e Localização de lesão estão em brancos'
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+
   date:
     abbr_day_names:
-    - dom
-    - seg
-    - ter
-    - qua
-    - qui
-    - sex
-    - sáb
+      - dom
+      - seg
+      - ter
+      - qua
+      - qui
+      - sex
+      - sáb
     abbr_month_names:
-    -
-    - jan
-    - fev
-    - mar
-    - abr
-    - mai
-    - jun
-    - jul
-    - ago
-    - set
-    - out
-    - nov
-    - dez
+      -
+      - jan
+      - fev
+      - mar
+      - abr
+      - mai
+      - jun
+      - jul
+      - ago
+      - set
+      - out
+      - nov
+      - dez
     day_names:
-    - domingo
-    - segunda-feira
-    - terça-feira
-    - quarta-feira
-    - quinta-feira
-    - sexta-feira
-    - sábado
+      - domingo
+      - segunda-feira
+      - terça-feira
+      - quarta-feira
+      - quinta-feira
+      - sexta-feira
+      - sábado
     formats:
       default: "%d/%m/%Y"
       long: "%d de %B de %Y"
       short: "%d de %B"
     month_names:
-    -
-    - janeiro
-    - fevereiro
-    - março
-    - abril
-    - maio
-    - junho
-    - julho
-    - agosto
-    - setembro
-    - outubro
-    - novembro
-    - dezembro
+      -
+      - janeiro
+      - fevereiro
+      - março
+      - abril
+      - maio
+      - junho
+      - julho
+      - agosto
+      - setembro
+      - outubro
+      - novembro
+      - dezembro
     order:
-    - :day
-    - :month
-    - :year
+      - :day
+      - :month
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:

@@ -5,14 +5,17 @@ class Usuario < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   enum perfil:{
-    admin: 0,
+    administrador: 0,
     analista: 1,
     tecnico: 2,
-    secretario: 3
+    secretario: 3,
+    profissional_saude: 4
   }
 
   validates :nome, presence: true
+  validates :email, uniqueness: true
+  validates_confirmation_of :encrypted_password
 
 
-  
+
 end
