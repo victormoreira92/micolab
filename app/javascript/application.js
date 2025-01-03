@@ -4,11 +4,10 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 import jQuery from "jquery";
 import Inputmask from "inputmask";
-import "./datatable"
-import "./obter_endereco"
-import "./input_mask"
 import DataTable from 'datatables.net-dt';
 import 'datatables.net-bs4'
+import "./obter_endereco"
+import "./input_mask"
 
 
 document.addEventListener('turbo:load', () => {
@@ -17,8 +16,8 @@ document.addEventListener('turbo:load', () => {
     responsive: true,
     columnDefs: [{ width: '30%', targets: 0 }],
     language: {
-      url: '//cdn.datatables.net/plug-ins/2.1.8/i18n/pt-BR.json',
-    },
+      url: '//cdn.datatables.net/plug-ins/2.0.5/i18n/pt-BR.json',
+    }
   });
 });
 

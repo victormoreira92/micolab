@@ -2,7 +2,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   MaskTelefone()
   MaskCPF()
   MaskCNES()
+  MaskCEP()
 })
+
+function MaskCEP(){
+  var im = new Inputmask("99999-999", {removeMaskOnSubmit: true});
+  $('.campo_cep').each(function () {
+    im.mask($(this));
+  });
+}
 
 function MaskCNES() {
   var im = new Inputmask("9999999", {removeMaskOnSubmit: true});
