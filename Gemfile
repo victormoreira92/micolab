@@ -64,6 +64,7 @@ group :development, :test do
   gem "awesome_print"
   gem "rubocop"
   gem 'brazil-cep'
+  gem 'byebug'
 end
 
 group :test do
