@@ -5,7 +5,7 @@ FactoryBot.define do
     password { 'micolab123' }
     password_confirmation { 'micolab123' }
     email { Faker::Internet.email  }
-    perfil { 0 }
+    perfil { :administrador }
   end
 
   trait :analista do
