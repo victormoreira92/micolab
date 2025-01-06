@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_18_024939) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_06_214937) do
   create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "numero_amostra"
     t.datetime "data_coleta"
@@ -19,7 +19,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_18_024939) do
     t.datetime "updated_at", null: false
     t.bigint "status_amostra_id", null: false
     t.bigint "material_biologico_id", null: false
+    t.bigint "requisicao_id", null: false
     t.index ["material_biologico_id"], name: "index_amostras_on_material_biologico_id"
+    t.index ["requisicao_id"], name: "index_amostras_on_requisicao_id"
     t.index ["status_amostra_id"], name: "index_amostras_on_status_amostra_id"
   end
 
@@ -39,9 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_18_024939) do
     t.integer "caso"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "paciente_id", null: false
     t.boolean "atividade_risco"
-    t.index ["paciente_id"], name: "index_informacoes_clinicas_on_paciente_id"
+    t.bigint "requisicao_id", null: false
+    t.index ["requisicao_id"], name: "index_informacoes_clinicas_on_requisicao_id"
   end
 
   create_table "informacoes_domiciliares", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -86,6 +88,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_18_024939) do
     t.datetime "updated_at", null: false
     t.index ["paciente_id"], name: "index_pacientes_unidades_saudes_on_paciente_id"
     t.index ["unidade_saude_id"], name: "index_pacientes_unidades_saudes_on_unidade_saude_id"
+  end
+
+  create_table "requisicoes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "numero_requisicao"
+    t.bigint "paciente_id", null: false
+    t.integer "status_requisicao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_requisicoes_on_paciente_id"
   end
 
   create_table "status_amostra", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -146,9 +157,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_18_024939) do
   end
 
   add_foreign_key "amostras", "materiais_biologicos"
+  add_foreign_key "amostras", "requisicoes"
   add_foreign_key "amostras", "status_amostra"
-  add_foreign_key "informacoes_clinicas", "pacientes"
+  add_foreign_key "informacoes_clinicas", "requisicoes"
   add_foreign_key "informacoes_domiciliares", "pacientes"
   add_foreign_key "pacientes_unidades_saudes", "pacientes"
   add_foreign_key "pacientes_unidades_saudes", "unidades_saudes"
+  add_foreign_key "requisicoes", "pacientes"
 end

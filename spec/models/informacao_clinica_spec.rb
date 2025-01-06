@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe InformacaoClinica, type: :model do
   describe 'Associações' do
-    it { is_expected.to belong_to(:paciente) }
+    it { is_expected.to belong_to(:requisicao) }
   end
 
   describe 'Validações' do
