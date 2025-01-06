@@ -1,6 +1,6 @@
 RSpec.configure do |config|
 
   config.after(:each) do
-    Warden.test_reset!
+    Warden.test_mode!
   end
 end
