@@ -64,7 +64,7 @@ class InformacaoClinica < ApplicationRecord
     diagnostico: 7,
     ignorado: 8
   }
-  belongs_to :requisicao
+  belongs_to :paciente
   validates :data_inicio_sintomas, :caso, :numero_prontuario, presence: true
   validates_inclusion_of :lesao_pulmonar, :uso_antifungicos, :atividade_risco,
                          in: [true, false], message: 'não pode ficar em branco'

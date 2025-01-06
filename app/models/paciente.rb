@@ -1,8 +1,8 @@
 class Paciente < ApplicationRecord
   has_many :pacientes_unidades_saudes
   has_many :unidades_saudes, through: :pacientes_unidades_saudes
-  has_many :requisicoes
-  has_one :informacao_domiciliar, dependent: :destroy
+  has_many :informacoes_clinicas
+  has_many :informacoes_domiciliares
   validates :nome_mae, :nome_paciente, :data_nascimento, :sexo, presence: true
 
   enum etnia: {

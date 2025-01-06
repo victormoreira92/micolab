@@ -24,7 +24,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular "status_amostra", "status_amostra"
   inflect.irregular "status", "status"
   inflect.irregular "material_biologico", "materiais_biologicos"
-  inflect.irregular "requisicao", "requisicoes"
 
 
 end

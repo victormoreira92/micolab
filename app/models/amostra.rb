@@ -9,7 +9,6 @@ class Amostra < ApplicationRecord
   }
   belongs_to :status_amostra
   belongs_to :material_biologico
-  belongs_to :requisicao
   validates :tipo_amostra, :data_coleta, presence: true
 
   private
