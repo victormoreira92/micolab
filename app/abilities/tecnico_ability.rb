@@ -2,7 +2,8 @@ class TecnicoAbility < PerfilGeralAbility
   attr_accessor :usuario
 
   ABILITIES_POR_CONTROLLER = {
-    "unidades_saudes": 'permissoes_unidades_saudes'
+    "unidades_saudes": 'permissoes_unidades_saudes',
+    "requisicoes": 'permissoes_requisicoes'
   }.freeze
 
   def initialize(usuario, controller = nil, path = nil, full_path = nil)
@@ -16,5 +17,8 @@ class TecnicoAbility < PerfilGeralAbility
     can :read, UnidadeSaude
   end
 
+  def permissoes_requisicoes
+    can %i[read create update destroy], Requisicao
+  end
 
 end
