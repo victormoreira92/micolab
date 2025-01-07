@@ -1,5 +1,5 @@
 <div class="card col-12">
-<%= form_with(model: requisicao, remote: true, class: 'form-horizontal',id:"requisicao-form") do |form| %>
+<%= form_with(model: requisicao, remote: true, class: 'form-horizontal',id:"requisicao-form") do |f| %>
       <div class="row">
         <div class="input-group mb-3 col-8">
           <%= select_tag :suspeita_diagnostica, options_for_select(suspeita_diagnostica), prompt: 'Selecione uma suspeita diagnóstica', class: 'form-control' %>
