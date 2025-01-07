@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe "Requisicoes", type: :request do
+  let!(:usuario){ create(:usuario)}
+
+  before do
+    post new_usuario_session_path, params: { usuario: { email: usuario.email, password: usuario.password }}
+  end
+
   describe "GET /index" do
-    it "returns http success" do
-      get "/requisicoes/index"
+    it "retorna success" do
+      get requisicoes_path
       expect(response).to have_http_status(:success)
     end
   end
