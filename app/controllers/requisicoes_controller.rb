@@ -4,8 +4,7 @@ class RequisicoesController < ApplicationController
     @requisicoes = Requisicao.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
   end

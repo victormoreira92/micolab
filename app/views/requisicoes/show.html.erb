@@ -1,2 +1,50 @@
-<h1>Requisicoes#show</h1>
-<p>Find me in app/views/requisicoes/show.html.erb</p>
+<div class="container-lg">
+  <div class="card col-12">
+    <div class="card-header">
+      <h6 class="card-title"><%= @requisicao.paciente.nome_paciente %></h6>
+    </div>
+    <div class="card-body">
+      <h6 class="text-left"><i class="fs-4 bi-hospital"></i> Informações Clinicas</h6>
+      <hr class="mb-2">
+
+      <dl class="row">
+        <dt class="col-sm-4">CNES:</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.cnes %></dd>
+        <dt class="col-sm-4">Status:</dt>
+        <dd class="col-sm-8">Ativo</dd>
+        <dt class="col-sm-4">E-Mail:</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.email_unidade_saude %></dd>
+        <dt class="col-sm-4">Telefone</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.telefone %></dd>
+      </dl>
+
+      <h6 class="text-left font-weight-bold"><i class="fs-4 bi-geo"></i>Endereço</h6>
+      <hr class="mb-2">
+
+      <dl class="row">
+        <dt class="col-sm-4">Rua:</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.endereco %></dd>
+        <dt class="col-sm-4">Complemento:</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.complemento %></dd>
+        <dt class="col-sm-4">UF:</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.estado %></dd>
+        <dt class="col-sm-4">Cidade:</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.cidade %></dd>
+        <dt class="col-sm-4">CEP:</dt>
+        <dd class="col-sm-8"><%= @unidade_saude.cep %></dd>
+      </dl>
+    </div>
+
+    <div class="card-footer d-flex justify-content-center align-items-center">
+      <%= link_to "Editar Unidade", edit_unidade_saude_path(@unidade_saude), class: "btn btn-warning mr-2" %> |
+      <%= link_to "Desativar Unidade", "#", class:"btn btn-danger ml-2" %>
+    </div>
+    <div class="row ml-1 mb-1">
+    </div>
+    <div>
+    </div>
+  </div>
+  <div class="row px-3 py-5">
+    <%= link_to 'Voltar', unidades_saudes_path, class: "btn btn-info" %>
+  </div>
+</div>
