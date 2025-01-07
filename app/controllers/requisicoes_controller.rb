@@ -8,6 +8,7 @@ class RequisicoesController < ApplicationController
 
   def new
     @requisicao = Requisicao.new
+    @pacientes = Paciente.all
   end
 
   def create

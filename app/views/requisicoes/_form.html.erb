@@ -9,10 +9,10 @@
 
         <div class="row">
           <div class="input-group mb-3 col-12">
-            <%= form.select :unidade_saude_id,
-                            options_from_collection_for_select(@unidades_saude, :id, :nome),
-                            { prompt: "Selecione uma unidade de saúde" },
-                            class: "form-control tom-select" %>
+            <%= f.select :paciente_id,
+                            options_from_collection_for_select(@pacientes, :id, :nome_paciente),
+                            { prompt: "Selecione um paciente" },
+                            class: "form-control select2" %>
 
           </div>
         </div>
