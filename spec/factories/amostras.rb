@@ -5,6 +5,7 @@ FactoryBot.define do
     tipo_amostra { 0 }
     association :status_amostra
     association :material_biologico
+    association :requisicao
   end
 
   trait :sem_data_coleta do
