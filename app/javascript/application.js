@@ -5,7 +5,7 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 import jQuery from "jquery";
 import Inputmask from "inputmask";
-
+import TomSelect from "tom-select";
 import DataTable from 'datatables.net-dt';
 import 'datatables.net-bs4'
 import "./obter_endereco"
@@ -22,4 +22,11 @@ document.addEventListener('turbo:load', () => {
     }
   });
 });
+
+new TomSelect(".tom-select",{
+  allowEmptyOption: false,
+  create: true,
+})
+
+
 
