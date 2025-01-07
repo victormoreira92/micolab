@@ -1,5 +1,146 @@
 <div class="card col-12">
 <%= form_with(model: requisicao, remote: true, class: 'form-horizontal',id:"requisicao-form") do |form| %>
+      <div class="row">
+        <div class="input-group mb-3 col-8">
+          <%= select_tag :suspeita_diagnostica, options_for_select(suspeita_diagnostica), prompt: 'Selecione uma suspeita diagnóstica', class: 'form-control' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
 
-  <% end %>
+        <div class="input-group mb-3 col-4">
+          <%= f.date_field :data_inicio_sintomas, class: "form-control",
+                           placeholder: 'Data Inicio dos Sintomas' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-group mb-3 col-4">
+          <%= f.text_field :numero_prontuario, class: "form-control",
+                           placeholder: 'Numero de Prontuário' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-4">
+          <%= select_tag :caso, options_for_select(casos), prompt: 'Selecione o tipo de caso', class: 'form-control' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="input-group mb-3 col-4">
+          <%= select_tag :fatores_associados, options_for_select(fatores_associados), prompt: 'Selecione um dos fatores associados', class: 'form-control' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-4">
+          <%= f.label :uso_antifungicos, 'Uso de Antibióticos:', class: 'pr-2'%>
+          <div>
+            <%= f.radio_button :uso_antifungicos, value: '1', class: 'px-2' %>
+            <%= f.label :uso_antifungicos, "Sim", class:'pr-3'%>
+          </div>
+          <div>
+            <%= f.radio_button :uso_antifungicos, value: '0', class: 'px-2' %>
+            <%= f.label :uso_antifungicos, "Não", class:'pr-3' %>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-4">
+          <%= select_tag :tipo_antifungico, options_for_select(tipo_antifungicos), prompt: 'Selecione o tipo de antifúngico', class: 'form-control' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-4">
+          <%= f.text_field :tipo_antifungico, class: "form-control",
+                           placeholder: 'Outro Antifúngico' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-4">
+          <%= f.label :lesao_pulmonar, 'Lesão Pulmonar', class: 'pr-2'%>
+          <div>
+            <%= f.radio_button :lesao_pulmonar, value: '1', class: 'px-2' %>
+            <%= f.label :lesao_pulmonar, "Sim", class:'pr-3'%>
+          </div>
+          <div>
+            <%= f.radio_button :lesao_pulmonar, value: '0', class: 'px-2' %>
+            <%= f.label :lesao_pulmonar, "Não", class:'pr-2' %>
+          </div>
+        </div>
+        <div class="input-group mb-3 col-4">
+          <%= select_tag :tipo_lesao_pulmonar, options_for_select(tipo_lesao_pulmonar), prompt: 'Selecione o tipo de lesão pulmonar', class: 'form-control' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-4">
+          <%= select_tag :localizacao_lesao_pulmonar, options_for_select(localizacao_lesao_pulmonar), prompt: 'Selecione o local de lesão pulmonar', class: 'form-control' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-4">
+          <%= f.label :atividade_risco, 'Atividade de Risco', class: 'pr-2'%>
+          <div>
+            <%= f.radio_button :atividade_risco, value: '1', class: 'px-2' %>
+            <%= f.label :atividade_risco, "Sim", class:'pr-3'%>
+          </div>
+          <div>
+            <%= f.radio_button :atividade_risco, value: '0', class: 'px-2' %>
+            <%= f.label :atividade_risco, "Não", class:'pr-2' %>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-4">
+          <%= select_tag :tipo_atividade_risco, options_for_select(tipo_atividade_riscos), prompt: 'Tipo de Atividade de Risco', class: 'form-control' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-4">
+          <%= f.text_field :ocupacao, class: "form-control",
+                           placeholder: 'Ocupação' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+<% end %>
 </div>
