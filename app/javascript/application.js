@@ -5,6 +5,7 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 import jQuery from "jquery";
 import Inputmask from "inputmask";
+import "@nathanvda/cocoon"
 import TomSelect from "tom-select";
 import DataTable from 'datatables.net-dt';
 import 'datatables.net-bs4'
@@ -21,12 +22,22 @@ document.addEventListener('turbo:load', () => {
       url: '//cdn.datatables.net/plug-ins/2.0.5/i18n/pt-BR.json',
     }
   });
+
+  let select = new TomSelect(".tom-select",{
+    allowEmptyOption: false,
+    create: true,
+    render:{
+      option_create: function( data, escape ){
+        return '<div class="create">Adicionar <strong>' + escape(data.input) + '</strong>&hellip;</div>';
+      },
+      no_results: function( data, escape ){
+        return '<div class="no-results">Não encontrado </div>';
+      },
+    }
+  })
 });
 
-new TomSelect(".tom-select",{
-  allowEmptyOption: false,
-  create: true,
-})
+
 
 
 
