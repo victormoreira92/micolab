@@ -1,0 +1,21 @@
+<tr class="nested-fields col-12 px-2">
+  <td class="col-3 center">
+    <%if @requisicao.amostras.empty? %>
+      <span class="text-center">---</span>
+    <% else %>
+      <%= f.text_field :numero_amostra, class:"form-control", disabled: true %>
+    <% end %>
+  </td>
+
+  <td class="col-3 justify-content-center">
+    <%= select_tag :material_biologico_id, options_for_select(material_biologico), prompt: 'Selecione o tipo de material biológico', class: 'form-control p-1' %>
+  </td>
+
+  <td class="col-3 justify-content-center">
+    <%= f.date_field :data_coleta, class:"form-control" %>
+  </td>
+
+  <td class="col-3 justify-content-center">
+    <%= link_to_remove_association "Remover Amostra", f, class:"btn btn-danger" %>
+  </td>
+</tr>

@@ -5,6 +5,7 @@ class Requisicao < ApplicationRecord
   }
   belongs_to :paciente
   has_many :amostras
+  accepts_nested_attributes_for :amostras, reject_if: :all_blank, allow_destroy: true
   has_one :informacao_clinica, dependent: :destroy
   validates :status_requisicao, :numero_requisicao, presence: true
 end

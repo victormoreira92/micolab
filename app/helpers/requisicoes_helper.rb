@@ -30,5 +30,8 @@ module RequisicoesHelper
   def zona
     InformacaoDomiciliar.zonas.map{|k, v| [k.humanize.capitalize, v]}
   end
+
+  def material_biologico
+    MaterialBiologico.all.map{|k,v| [k.nome_material_biologico, k.id]}  end
 end
 
