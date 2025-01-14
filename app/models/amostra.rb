@@ -1,5 +1,5 @@
 class Amostra < ApplicationRecord
-  before_create :set_numero_inscricao
+  before_create :set_numero_amostra
 
   enum tipo_amostra: {
     amostra_in_natura: 0,
@@ -13,7 +13,11 @@ class Amostra < ApplicationRecord
 
   private
 
-  def set_numero_inscricao
+  def set_numero_amostra
     numero_amostra = "#{material_biologico.sigla}-#{123}"
+  end
+
+  def set_status_amostra
+    status_amostra = StatusAmostra.cadastrada.first
   end
 end

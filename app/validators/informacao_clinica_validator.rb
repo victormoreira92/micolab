@@ -13,6 +13,7 @@ class InformacaoClinicaValidator < ActiveModel::Validator
 
   def validar_lesao_pulmonar(record)
     return unless record.lesao_pulmonar
+    binding.pry
     if record.lesao_pulmonar && record.tipo_lesao_pulmonar.nil? && record.localizacao_lesao_pulmonar.nil?
       record.errors.add(:lesao_pulmonar, :lesao_pulmonar_sem_descricao)
     end

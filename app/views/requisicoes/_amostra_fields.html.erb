@@ -1,5 +1,5 @@
-<tr class="nested-fields col-12 px-2">
-  <td class="col-3 center">
+<tr class="nested-fields col-12 py-2">
+  <td class="col-2 center">
     <%if @requisicao.amostras.empty? %>
       <span class="text-center">---</span>
     <% else %>
@@ -7,15 +7,19 @@
     <% end %>
   </td>
 
-  <td class="col-3 justify-content-center">
+  <td class="col-2 justify-content-center">
+    <%= select_tag :tipo_amostra, options_for_select(tipo_amostra), prompt: 'Selecione o tipo de material biológico', class: 'form-control p-1' %>
+  </td>
+
+  <td class="col-2 justify-content-center">
     <%= select_tag :material_biologico_id, options_for_select(material_biologico), prompt: 'Selecione o tipo de material biológico', class: 'form-control p-1' %>
   </td>
 
-  <td class="col-3 justify-content-center">
-    <%= f.date_field :data_coleta, class:"form-control" %>
+  <td class="col-2 justify-content-center">
+    <%= f.date_field :data_coleta, class:"form-control", max: Date.today, min: 1.months.ago %>
   </td>
 
-  <td class="col-3 justify-content-center">
+  <td class="col-2 justify-content-center">
     <%= link_to_remove_association "Remover Amostra", f, class:"btn btn-danger" %>
   </td>
 </tr>
