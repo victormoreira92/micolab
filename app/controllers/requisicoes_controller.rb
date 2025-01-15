@@ -30,6 +30,15 @@ class RequisicoesController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @requisicao.update(requisicao_params)
+        flash[:success] = t('activerecord.success.messages.update', model: Requisicao.model_name.human)
+        format.html { redirect_to requisicao_path(@requisicao) }
+      else
+        flash[:error] = @requisicao.errors.full_messages
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

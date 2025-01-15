@@ -11,6 +11,8 @@ import DataTable from 'datatables.net-dt';
 import 'datatables.net-bs4'
 import "./obter_endereco"
 import "./input_mask"
+import "./toogle_informacao_clinica"
+import $ from "jquery";
 
 
 document.addEventListener('turbo:load', () => {
@@ -35,6 +37,16 @@ document.addEventListener('turbo:load', () => {
       },
     }
   })
+});
+
+$(document).ready(function() {
+  $('.toogle_atributo').on('change', function() {
+    if ($(this).val() === 'sim') {
+      $('.atributos_informacao_clinica').removeClass('d-none').addClass('d-block');
+    } else {
+      $('.atributos_informacao_clinica').removeClass('d-block').addClass('d-none');
+    }
+  });
 });
 
 

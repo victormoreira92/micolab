@@ -46,30 +46,25 @@
 
       <div class="row">
         <div class="input-group mb-3 col-4">
-          <%= f.label :uso_antifungicos, 'Uso de Antibióticos:', class: 'pr-2'%>
-          <div>
-            <%= f.check_box :uso_antifungicos, value: 1, class: 'px-2' %>
-            <%= f.label :uso_antifungicos, "Sim", class:'pr-3'%>
-          </div>
-          <div>
-            <%= f.check_box :uso_antifungicos, value: 0, class: 'px-2' %>
-            <%= f.label :uso_antifungicos, "Não", class:'pr-3' %>
-          </div>
+          <%= f.label :uso_antifungicos, "Uso de Antifungicos?", class:'pt-1 px-2' %>
+          <%= f.select :uso_antifungicos, [['Não', false], ['Sim', true]], {}, class: 'form-control toogle_atributo', data: { campo: 'uso_antifungicos' }%>
         </div>
-        <div class="input-group mb-3 col-4">
-          <%= select_tag :tipo_antifungico, options_for_select(tipo_antifungicos), prompt: 'Selecione o tipo de antifúngico', class: 'form-control' %>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fs-4 bi-journal-medical"></span>
+        <div class="uso_antifungicos d-none row">
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :tipo_antifungico, options_for_select(tipo_antifungicos), prompt: 'Selecione o tipo de antifúngico', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="input-group mb-3 col-4">
-          <%= f.text_field :tipo_antifungico, class: "form-control",
-                           placeholder: 'Outro Antifúngico' %>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fs-4 bi-journal-medical"></span>
+          <div class="input-group mb-3 col-6">
+            <%= f.text_field :tipo_antifungico, class: "form-control",
+                             placeholder: 'Outro Antifúngico' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -80,33 +75,30 @@
 
       <div class="row">
         <div class="input-group mb-3 col-4">
-          <%= f.label :lesao_pulmonar, 'Lesão Pulmonar', class: 'pr-2'%>
-          <div>
-            <%= f.check_box :lesao_pulmonar, value: 1, class: 'px-2' %>
-            <%= f.label :lesao_pulmonar, "Sim", class:'pr-3'%>
-          </div>
-          <div>
-            <%= f.check_box :lesao_pulmonar, value: 0, class: 'px-2' %>
-            <%= f.label :lesao_pulmonar, "Não", class:'pr-2' %>
-          </div>
+          <%= f.label :lesao_pulmonar, "Lesão Pulmonar?", class:'pt-1 px-2' %>
+          <%= f.select :lesao_pulmonar, [['Não', false], ['Sim', true]], {}, class: 'form-control toogle_atributo', data: { campo: 'lesao_pulmonar' }%>
         </div>
-        <div class="input-group mb-3 col-4">
-          <%= select_tag :tipo_lesao_pulmonar, options_for_select(tipo_lesao_pulmonar), prompt: 'Selecione o tipo de lesão pulmonar', class: 'form-control' %>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fs-4 bi-journal-medical"></span>
+
+        <div class="lesao_pulmonar d-none row">
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :tipo_lesao_pulmonar, options_for_select(tipo_lesao_pulmonar), prompt: 'Selecione o tipo de lesão pulmonar', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :localizacao_lesao_pulmonar, options_for_select(localizacao_lesao_pulmonar), prompt: 'Selecione o local de lesão pulmonar', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="input-group mb-3 col-4">
-          <%= select_tag :localizacao_lesao_pulmonar, options_for_select(localizacao_lesao_pulmonar), prompt: 'Selecione o local de lesão pulmonar', class: 'form-control' %>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fs-4 bi-journal-medical"></span>
-            </div>
-          </div>
-        </div>
       </div>
 
       <h5 class="text-left "><i class="bi bi-journal-medical"></i> Atividades de Risco</h5>
@@ -114,32 +106,26 @@
 
       <div class="row">
         <div class="input-group mb-3 col-4">
-          <%= f.label :atividade_risco, 'Atividade de Risco', class: 'pr-2'%>
-          <div>
-            <%= f.check_box :atividade_risco, value: 1, class: 'px-2' %>
-            <%= f.label :atividade_risco, "Sim", class:'pr-3'%>
-          </div>
-          <div>
-            <%= f.check_box :atividade_risco, value: 0, class: 'px-2' %>
-            <%= f.label :atividade_risco, "Não", class:'pr-2' %>
-          </div>
+          <%= f.label :atividade_risco, "Atividade de Risco?", class:'pt-1 px-2' %>
+          <%= f.select :atividade_risco, [['Não', false], ['Sim', true]], {}, class: 'form-control toogle_atributo', data: { campo: 'atividade_risco' }%>
         </div>
-
-        <div class="input-group mb-3 col-4">
-          <%= select_tag :tipo_atividade_risco, options_for_select(tipo_atividade_riscos), prompt: 'Tipo de Atividade de Risco', class: 'form-control' %>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fs-4 bi-journal-medical"></span>
+        <div class="atividade_risco d-none row">
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :tipo_atividade_risco, options_for_select(tipo_atividade_riscos), prompt: 'Tipo de Atividade de Risco', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="input-group mb-3 col-4">
-          <%= f.text_field :ocupacao, class: "form-control",
-                           placeholder: 'Ocupação' %>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fs-4 bi-journal-medical"></span>
+          <div class="input-group mb-3 col-6">
+            <%= f.text_field :ocupacao, class: "form-control",
+                             placeholder: 'Ocupação' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
             </div>
           </div>
         </div>
