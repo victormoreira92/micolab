@@ -27,11 +27,12 @@ class InformacaoClinica < ApplicationRecord
   }
 
   enum fatores_associados: {
-    linfoma: 0,
+    nenhum_associado: 0,
     tuberculose: 1,
     hiv_aids: 2,
     leucemia: 3,
-    transplante: 4
+    transplante: 4,
+    linfoma: 5
   }
 
   enum tipo_antifungico: {
@@ -64,7 +65,7 @@ class InformacaoClinica < ApplicationRecord
     diagnostico: 7,
     ignorado: 8
   }
-  belongs_to :paciente
+  belongs_to :requisicao
   validates :data_inicio_sintomas, :caso, :numero_prontuario, presence: true
   validates_inclusion_of :lesao_pulmonar, :uso_antifungicos, :atividade_risco,
                          in: [true, false], message: 'não pode ficar em branco'

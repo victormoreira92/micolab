@@ -3,7 +3,8 @@ class AnalistaAbility < PerfilGeralAbility
 
   ABILITIES_POR_CONTROLLER = {
     "usuarios": 'permissoes_usuarios',
-    "unidades_saudes": 'permissoes_unidades_saudes'
+    "unidades_saudes": 'permissoes_unidades_saudes',
+    "requisicoes": 'permissoes_requisicoes'
   }.freeze
 
   def initialize(usuario, controller = nil, path = nil, full_path = nil)
@@ -15,6 +16,10 @@ class AnalistaAbility < PerfilGeralAbility
 
   def permissoes_unidades_saudes
     can :read, UnidadeSaude
+  end
+
+  def permissoes_requisicoes
+    can %i[read create update destroy], Requisicao
   end
 
 

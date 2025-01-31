@@ -14,7 +14,7 @@ FactoryBot.define do
     numero_prontuario { Faker::Lorem.characters(number: 4) }
     ocupacao { Faker::Lorem.sentence }
     caso { 1 }
-    association :paciente
+    association :requisicao
   end
 
   trait :sem_data_inicio_sintomas do

@@ -1,0 +1,140 @@
+
+      <div class="row">
+        <div class="input-group mb-3 col-4">
+          <%= f.select :suspeita_diagnostica, options_for_select(suspeita_diagnostica), {}, class: 'form-control', prompt: 'Selecione uma suspeita diagnóstica' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3 col-4">
+          <%= f.text_field :numero_prontuario, class: "form-control",
+                           placeholder: 'Numero de Prontuário' %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-journal-medical"></span>
+            </div>
+          </div>
+        </div>
+         <div class="input-group mb-3 col-4">
+            <%= f.select :caso, options_for_select(casos),{}, class: 'form-control', prompt: 'Selecione o tipo de caso'%>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="row">
+            <div class="input-group mb-3 col-8">
+              <%= f.label :data_inicio_sintomas, 'Data Início dos Sintomas: ', class: 'p-1' %>
+              <%= f.date_field :data_inicio_sintomas, class: "form-control" %>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fs-4 bi-journal-medical"></span>
+                </div>
+              </div>
+            </div>
+             <div class="input-group mb-3 col-4">
+            <%= f.select :fatores_associados, options_for_select(fatores_associados),{}, class: 'form-control', prompt: 'Selecione o tipo de caso'%>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <h5 class="text-left "><i class="bi bi-prescription2"></i> Uso de Antifungicos</h5>
+      <hr class="mb-4 pb-2"/>
+
+      <div class="row">
+        <div class="input-group mb-3 col-4">
+          <%= f.label :uso_antifungicos, "Uso de Antifungicos?", class:'pt-1 px-2' %>
+          <%= f.select :uso_antifungicos, [['Não', false], ['Sim', true]], {}, class: 'form-control toogle_atributo', data: { campo: 'uso_antifungicos' }%>
+        </div>
+        <div class="uso_antifungicos d-none row">
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :tipo_antifungico, options_for_select(tipo_antifungicos), prompt: 'Selecione o tipo de antifúngico', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3 col-6">
+            <%= f.text_field :tipo_antifungico, class: "form-control",
+                             placeholder: 'Outro Antifúngico' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="text-left "><i class="bi bi-lungs"></i> Funções respiratórias</h5>
+      <hr class="mb-4 pb-2"/>
+
+      <div class="row">
+        <div class="input-group mb-3 col-4">
+          <%= f.label :lesao_pulmonar, "Lesão Pulmonar?", class:'pt-1 px-2' %>
+          <%= f.select :lesao_pulmonar, [['Não', false], ['Sim', true]], {}, class: 'form-control toogle_atributo', data: { campo: 'lesao_pulmonar' }%>
+        </div>
+
+        <div class="lesao_pulmonar d-none row">
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :tipo_lesao_pulmonar, options_for_select(tipo_lesao_pulmonar), prompt: 'Selecione o tipo de lesão pulmonar', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :localizacao_lesao_pulmonar, options_for_select(localizacao_lesao_pulmonar), prompt: 'Selecione o local de lesão pulmonar', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h5 class="text-left "><i class="bi bi-journal-medical"></i> Atividades de Risco</h5>
+      <hr class="mb-4 pb-2"/>
+
+      <div class="row">
+        <div class="input-group mb-3 col-4">
+          <%= f.label :atividade_risco, "Atividade de Risco?", class:'pt-1 px-2' %>
+          <%= f.select :atividade_risco, [['Não', false], ['Sim', true]], {}, class: 'form-control toogle_atributo', data: { campo: 'atividade_risco' }%>
+        </div>
+        <div class="atividade_risco d-none row">
+          <div class="input-group mb-3 col-6">
+            <%= select_tag :tipo_atividade_risco, options_for_select(tipo_atividade_riscos), prompt: 'Tipo de Atividade de Risco', class: 'form-control' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-6">
+            <%= f.text_field :ocupacao, class: "form-control",
+                             placeholder: 'Ocupação' %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

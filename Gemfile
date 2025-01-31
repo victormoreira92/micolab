@@ -53,6 +53,7 @@ gem "bootsnap", require: false
 
 gem 'cancancan'
 gem 'devise'
+gem 'cocoon'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -65,6 +66,7 @@ group :development, :test do
   gem "rubocop"
   gem 'brazil-cep'
   gem 'byebug'
+  gem 'solargraph'
 end
 
 group :test do

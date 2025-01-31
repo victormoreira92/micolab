@@ -4,6 +4,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.4",
+    "@nathanvda/cocoon": "^1.2.14",
     "@popperjs/core": "^2.11.8",
     "autoprefixer": "^10.4.19",
     "bootstrap": "^4.4.1",
@@ -19,7 +20,8 @@
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "sass": "^1.77.4",
-    "sweetalert2": "^11.15.2"
+    "sweetalert2": "^11.15.2",
+    "tom-select": "^2.4.1"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",

@@ -13,5 +13,13 @@ RSpec.describe AdministradorAbility, type: :model do
         expect(ability).to be_able_to :manage, UnidadeSaude
       end
     end
+
+    context 'sobre permissões de Requisição' do
+      let(:ability) { described_class.new(usuario_administrador, 'requisicoes') }
+
+      it 'pode gerenciar' do
+        expect(ability).to be_able_to :manage, Requisicao
+      end
+    end
   end
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'errors/acesso_negado'
   get 'errors/erro_interno'
   get 'errors/pagina_nao_encontrada'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
       get :obter_endereco
     end
   end
+
+  resources :requisicoes
 
   get '/403', to: 'errors#acesso_negado'
 

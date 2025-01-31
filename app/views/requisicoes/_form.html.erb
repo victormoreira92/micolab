@@ -1,0 +1,60 @@
+<div class="card col-12">
+<%= form_with(model: requisicao, remote: true, class: 'form-horizontal',id:"requisicao-form") do |f| %>
+    <div class="card-body register-card-body">
+
+      <div class="mb-2">
+
+        <h5 class="text-left"><i class="bi bi-person-fill"></i> Dados de Paciente</h5>
+        <hr class="mb-4"/>
+
+        <div class="row">
+          <div class="input-group mb-3 col-12">
+
+            <%= f.select :paciente_id,
+                            options_for_select(pacientes_select(@pacientes)),
+                            { prompt: "Selecione um paciente" },
+                            class: "tom-select form-control" %>
+
+          </div>
+        </div>
+      </div>
+      <h5 class="text-left "><i class="bi bi-clipboard2-pulse-fill"></i> Informações Clínicas</h5>
+      <hr class="mb-4 pb-2"/>
+      <%= f.fields_for :informacao_clinica do |informacao_clinica| %>
+        <%= render 'informacao_clinica_fields', f: informacao_clinica %>
+      <% end %>  
+        <div class="col-12 d-flex justify-content-center p-3">
+          <%= link_to_add_association 'Adicionar Informação Clínica', f,:informacao_clinica, force_non_association_create: true, class: 'btn btn-warning col-4' %>
+        </div>    
+      <h5 class="text-left "><i class="bi bi-droplet-fill"></i> Amostras</h5>
+      <hr class="mb-4 pb-2"/>
+
+      <div class="row">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th class="col-2">Número de Amostra</th>
+              <th class="col-2">Amostra</th>
+              <th class="col-2">Material Biológico</th>
+              <th class="col-2">Data de Coleta</th>
+              <th class="col-2">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= f.fields_for :amostras do |amostra| %>
+              <%= render 'amostra_fields', f: amostra %>
+            <% end %>
+          </tbody>
+        </table>
+
+        <div class="col-12 d-flex justify-content-center p-3">
+          <%= link_to_add_association 'Adicionar Amostra', f, :amostras, class: 'btn btn-warning col-3' %>
+        </div>
+      </div>
+      
+      <div class="card-footer d-flex justify-content-center col-12">
+        <%= f.submit 'Criar Requisição', class:'btn btn-success text-center'%>
+      </div>
+<% end %>
+</div>
+</div>

@@ -4,7 +4,7 @@ FactoryBot.define do
     situacao { 0 }
   end
 
-  trait :sem_descricao do
+  trait :status_amostra_sem_descricao do
     descricao { nil }
   end
 
@@ -16,7 +16,7 @@ FactoryBot.define do
     status { 0 }
   end
 
-  trait :em_analise do
+  trait :status_amostra_em_analise do
     status { 1 }
   end
 
