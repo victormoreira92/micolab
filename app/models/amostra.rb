@@ -1,5 +1,6 @@
 class Amostra < ApplicationRecord
-  before_create :set_numero_amostra
+  before_validation :set_numero_amostra, on: :create
+  before_validation :set_status_amostra, on: :create
 
   enum tipo_amostra: {
     amostra_in_natura: 0,
@@ -14,10 +15,10 @@ class Amostra < ApplicationRecord
   private
 
   def set_numero_amostra
-    numero_amostra = "#{material_biologico.sigla}-#{123}"
+    self.numero_amostra = Faker::Number.number(digits: 10).to_s
   end
 
   def set_status_amostra
-    status_amostra = StatusAmostra.cadastrada.first
+    self.status_amostra = StatusAmostra.cadastrada.first
   end
 end

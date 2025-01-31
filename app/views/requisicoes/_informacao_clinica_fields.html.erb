@@ -1,7 +1,7 @@
 
       <div class="row">
-        <div class="input-group mb-3 col-8">
-          <%= select_tag :suspeita_diagnostica, options_for_select(suspeita_diagnostica), prompt: 'Selecione uma suspeita diagnóstica', class: 'form-control' %>
+        <div class="input-group mb-3 col-4">
+          <%= f.select :suspeita_diagnostica, options_for_select(suspeita_diagnostica), {}, class: 'form-control', prompt: 'Selecione uma suspeita diagnóstica' %>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fs-4 bi-journal-medical"></span>
@@ -18,18 +18,18 @@
             </div>
           </div>
         </div>
-      </div>
-
-
-      <div class="row">
-          <div class="input-group mb-3 col-4">
-            <%= select_tag :caso, options_for_select(casos), prompt: 'Selecione o tipo de caso', class: 'form-control' %>
+         <div class="input-group mb-3 col-4">
+            <%= f.select :caso, options_for_select(casos),{}, class: 'form-control', prompt: 'Selecione o tipo de caso'%>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fs-4 bi-journal-medical"></span>
               </div>
             </div>
           </div>
+      </div>
+
+
+      <div class="row">
             <div class="input-group mb-3 col-8">
               <%= f.label :data_inicio_sintomas, 'Data Início dos Sintomas: ', class: 'p-1' %>
               <%= f.date_field :data_inicio_sintomas, class: "form-control" %>
@@ -39,6 +39,14 @@
                 </div>
               </div>
             </div>
+             <div class="input-group mb-3 col-4">
+            <%= f.select :fatores_associados, options_for_select(fatores_associados),{}, class: 'form-control', prompt: 'Selecione o tipo de caso'%>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-journal-medical"></span>
+              </div>
+            </div>
+          </div>
       </div>
 
       <h5 class="text-left "><i class="bi bi-prescription2"></i> Uso de Antifungicos</h5>

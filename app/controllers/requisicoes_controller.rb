@@ -14,7 +14,6 @@ class RequisicoesController < ApplicationController
 
   def create
     @requisicao = Requisicao.new(requisicao_params)
-    binding.pry
     respond_to do |format|
       if @requisicao.save
         flash[:success] = t('activerecord.success.messages.cadastro', model: Requisicao.model_name.human)

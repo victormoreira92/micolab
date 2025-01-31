@@ -1,6 +1,6 @@
 class Requisicao < ApplicationRecord
-  before_create :set_status_requisicao
-  after_create :set_numero_requisicao
+  before_validation :set_status_requisicao, on: :create
+  before_validation :set_numero_requisicao, on: :create
 
   enum status_requisicao: {
     aberta: 0,
@@ -17,10 +17,10 @@ class Requisicao < ApplicationRecord
   private
 
   def set_status_requisicao
-    status_requisicao = :aberta
+    self.status_requisicao = :aberta
   end
 
   def set_numero_requisicao
-    numero_requisicao = Time.now.year.to_s + Requisicao.last.id.to_s
+    self.numero_requisicao = "#{Time.now.year}#{Faker::Number.number(digits: 7)}"
   end
 end

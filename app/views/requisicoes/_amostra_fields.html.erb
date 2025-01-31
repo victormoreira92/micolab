@@ -8,11 +8,11 @@
   </td>
 
   <td class="col-2 justify-content-center">
-    <%= select_tag :tipo_amostra, options_for_select(tipo_amostra), prompt: 'Selecione o tipo de material biológico', class: 'form-control p-1' %>
+    <%= f.select :tipo_amostra, options_for_select(tipo_amostra), {}, class: 'form-control', prompt: 'Selecione o tipo de material biológico' %>
   </td>
 
   <td class="col-2 justify-content-center">
-    <%= select_tag :material_biologico_id, options_for_select(material_biologico), prompt: 'Selecione o tipo de material biológico', class: 'form-control p-1' %>
+    <%= f.select :material_biologico_id, options_for_select(material_biologico), {}, class: 'form-control', prompt: 'Selecione o tipo de material biológico', class: 'form-control p-1' %>
   </td>
 
   <td class="col-2 justify-content-center">

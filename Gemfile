@@ -66,6 +66,7 @@ group :development, :test do
   gem "rubocop"
   gem 'brazil-cep'
   gem 'byebug'
+  gem 'solargraph'
 end
 
 group :test do
