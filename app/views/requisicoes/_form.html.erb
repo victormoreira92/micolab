@@ -20,9 +20,9 @@
       </div>
       <h5 class="text-left "><i class="bi bi-clipboard2-pulse-fill"></i> Informações Clínicas</h5>
       <hr class="mb-4 pb-2"/>
-      <%= f.fields_for :informacao_clinica do |informacao_clinica| %>
+      <%= f.fields_for :informacao_clinica, requisicao.informacao_clinica || requisicao.build_informacao_clinica do |informacao_clinica| %>
         <%= render 'informacao_clinica_fields', f: informacao_clinica %>
-      <% end %>  
+      <% end %>
         <div class="col-12 d-flex justify-content-center p-3">
           <%= link_to_add_association 'Adicionar Informação Clínica', f,:informacao_clinica, force_non_association_create: true, class: 'btn btn-warning col-4' %>
         </div>    

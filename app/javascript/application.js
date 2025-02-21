@@ -13,6 +13,8 @@ import "./obter_endereco"
 import "./input_mask"
 import "./toogle_informacao_clinica"
 import $ from "jquery";
+import language from 'datatables.net-plugins/i18n/pt-BR.mjs';
+
 
 
 document.addEventListener('turbo:load', () => {
@@ -20,9 +22,7 @@ document.addEventListener('turbo:load', () => {
     paging: true,
     responsive: true,
     columnDefs: [{ width: '30%', targets: 0 }],
-    language: {
-      url: '//cdn.datatables.net/plug-ins/2.0.5/i18n/pt-BR.json',
-    }
+    url: '//cdn.datatables.net/plug-ins/2.2.2/i18n/pt-BR.json',
   });
 
   let select = new TomSelect(".tom-select",{

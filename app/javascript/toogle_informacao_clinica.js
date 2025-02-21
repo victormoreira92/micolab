@@ -2,11 +2,11 @@ $(document).ready(function() {
     $(document).on('change', '.toogle_atributo', function() {
         const valorSelecionado = $(this).val().toLowerCase().trim();
         const campo = this.dataset.campo;
-        console.log(this.dataset.campoampo)
+        console.log(campo)
         if (valorSelecionado == 'true') {
-            $(`.${campo}`).removeClass('d-none');
+            $(`.${campo}`).removeClass('disabled');
         } else {
-            $(`.${campo}`).addClass('d-none');
+            $(`.${campo}`).addClass('disabled');
         }
     });
 });
