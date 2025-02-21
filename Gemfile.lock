@@ -357,7 +357,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   mysql2 (~> 0.5)
-  pry
+  pry (>= 0.14)
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.1)
   rspec-rails
