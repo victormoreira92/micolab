@@ -6,7 +6,9 @@ class RequisicoesController < ApplicationController
     @requisicoes = Requisicao.all
   end
 
-  def show; end
+  def show
+    binding.pry
+  end
 
   def new
     @requisicao = Requisicao.new
@@ -25,7 +27,8 @@ class RequisicoesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     respond_to do |format|

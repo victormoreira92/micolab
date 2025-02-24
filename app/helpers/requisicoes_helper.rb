@@ -40,6 +40,6 @@ module RequisicoesHelper
   end
 
   def tipo_amostra
-    Amostra.tipo_amostras.map{|k, v| [k.humanize.capitalize, k]}
+    Amostra.tipo_amostras.map{|k, v| [k.humanize.capitalize, k.to_sym]}
   end
 end

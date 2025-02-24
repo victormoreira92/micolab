@@ -17,6 +17,7 @@
         <option value="benchmark" />
         <option value="cancan:ability" />
         <option value="channel" />
+        <option value="cocoon:install" />
         <option value="controller" />
         <option value="devise" />
         <option value="devise:controllers" />
@@ -80,6 +81,7 @@
         <option value="benchmark" />
         <option value="cancan:ability" />
         <option value="channel" />
+        <option value="cocoon:install" />
         <option value="controller" />
         <option value="devise" />
         <option value="devise:controllers" />
