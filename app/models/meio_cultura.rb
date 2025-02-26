@@ -1,7 +1,7 @@
 class MeioCultura < ApplicationRecord
   enum tipo_meio_cultura: {
-    liquido: 0,
-    solido: 1,
+    solido: 0,
+    liquido: 1,
     semisolido: 2
   }
 
