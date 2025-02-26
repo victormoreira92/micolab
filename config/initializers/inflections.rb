@@ -25,6 +25,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular "status", "status"
   inflect.irregular "material_biologico", "materiais_biologicos"
   inflect.irregular "requisicao", "requisicoes"
-
+  inflect.irregular "meio_cultura", "meios_culturas"
+  inflect.irregular 'tipo_meio_cultura', 'tipos_meios_culturas'
 
 end

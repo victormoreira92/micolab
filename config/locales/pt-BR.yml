@@ -3,6 +3,7 @@ pt-BR:
   activerecord:
     models:
       unidade_saude: "Unidades de Saúde"
+      meio_cultura: "Meios de Culturas"
     attributes:
       unidade_saude:
         email_unidade_saude: "Email de Unidade de Saúde"
@@ -37,6 +38,18 @@ pt-BR:
       material_biologico:
         nome_material_biologico: "Nome de Material Biológico"
         sigla: "Sigla de Material Biológico"
+      meio_cultura:
+        nome_meio_cultura: 'Nome de meio de cultura'
+        validade_meio_cultura: 'Validade de meio de cultura'
+        descricao_meio_cultura: 'Descrição de meio de cultura'
+        tipo_meio_cultura: 'Tipo de meio de cultura' 
+        fabricante_meio_cultura: 'Fabricante de meio de cultura' 
+        lote_meio_cultura: 'Lote de meio de cultura'
+        quantidade: 'Quantidade de meio de cultura'
+        tipos_meios_culturas:
+          liquido: 'Meio líquido:'
+          solido: 'Meio sólido'
+          semisolido: 'Meio semi-sólido '
     success:
       messages:
         cadastro: '%{model} cadastrado com sucesso'
