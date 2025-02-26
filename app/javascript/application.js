@@ -9,11 +9,11 @@ import "@nathanvda/cocoon"
 import TomSelect from "tom-select";
 import DataTable from 'datatables.net-dt';
 import 'datatables.net-bs4'
+import 'datatables.net-responsive-bs5';
 import "./obter_endereco"
 import "./input_mask"
 import "./toogle_informacao_clinica"
 import $ from "jquery";
-import language from 'datatables.net-plugins/i18n/pt-BR.mjs';
 
 
 
@@ -22,7 +22,9 @@ document.addEventListener('turbo:load', () => {
     paging: true,
     responsive: true,
     columnDefs: [{ width: '30%', targets: 0 }],
-    url: '//cdn.datatables.net/plug-ins/2.2.2/i18n/pt-BR.json',
+    language: {
+      url: '//cdn.datatables.net/plug-ins/2.2.2/i18n/pt-BR.json',
+    }
   });
 
   let select = new TomSelect(".tom-select",{

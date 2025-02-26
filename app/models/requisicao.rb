@@ -1,6 +1,6 @@
 class Requisicao < ApplicationRecord
   before_validation :set_status_requisicao, on: :create
-  before_validation :set_numero_requisicao, on: :create
+  before_validation :set_numero_requisicao, on: [:create, :update]
 
   enum status_requisicao: {
     aberta: 0,

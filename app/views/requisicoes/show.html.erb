@@ -17,7 +17,7 @@
         <dt class="col-sm-4">CPF:</dt>
         <dd class="col-sm-7"><%= @requisicao.paciente.cpf_paciente %></dd>
         <dt class="col-sm-4">Data Nascimento:</dt>
-        <dd class="col-sm-7"><%= @requisicao.paciente.data_nascimento.strftime('%d/%m/%Y') %></dd>
+        <dd class="col-sm-7"><%= @requisicao.paciente&.data_nascimento&.strftime('%d/%m/%Y') %></dd>
       </dl>
 
       <!-- Informações Clínicas -->
@@ -29,7 +29,7 @@
           <dt class="col-sm-4">Suspeita:</dt>
           <dd class="col-sm-7"><%= @requisicao&.informacao_clinica&.suspeita_diagnostica&.capitalize %></dd>
           <dt class="col-sm-4">Data início de sintomas:</dt>
-          <dd class="col-sm-7"><%= @requisicao&.informacao_clinica&.data_inicio_sintomas.strftime('%d/%m/%Y') %></dd>
+          <dd class="col-sm-7"><%= @requisicao&.informacao_clinica&.data_inicio_sintomas&.strftime('%d/%m/%Y') %></dd>
           <dt class="col-sm-4">Fatores Associados:</dt>
           <dd class="col-sm-7"><%= @requisicao&.informacao_clinica&.fatores_associados&.capitalize %></dd>
           <dt class="col-sm-4">Idade Gestacional:</dt>
