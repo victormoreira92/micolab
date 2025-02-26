@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get '/403', to: 'errors#acesso_negado'
 
+  resources :meios_culturas, expect: [:destroy]
 
   get 'home/index'
 

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @meio_cultura %>
+
+<div>
+  <%= link_to "Edit this meio cultura", edit_meio_cultura_path(@meio_cultura) %> |
+  <%= link_to "Back to meio culturas", meios_culturas_path %>
+
+  <%= button_to "Destroy this meio cultura", @meio_cultura, method: :delete %>
+</div>

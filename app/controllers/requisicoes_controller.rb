@@ -37,7 +37,7 @@ class RequisicoesController < ApplicationController
         format.html { redirect_to requisicao_path(@requisicao) }
       else
         flash[:error] = @requisicao.errors.full_messages
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end

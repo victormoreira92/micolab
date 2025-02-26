@@ -1,0 +1,2 @@
+module MeioCulturasHelper
+end
