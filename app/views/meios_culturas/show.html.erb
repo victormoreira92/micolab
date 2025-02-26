@@ -1,0 +1,35 @@
+<div class="container-md d-flex justify-content-center align-items-center">
+  <div class="card col-12">
+    <div class="card-header">
+      <h3 class="card-title"><%= @meio_cultura.nome_meio_cultura %></h3>
+    </div>
+    <div class="card-body">
+      <h6 class="text-left"><i class="fs-4 bi-cookie"></i> Dados de Meio de Cultura</h6>
+      <hr class="mb-2">
+
+      <dl class="row">
+        <dt class="col-sm-4">Tipo de Meio de Cultura:</dt>
+        <dd class="col-sm-8"><%= @meio_cultura.tipo_meio_cultura %></dd>
+        <dt class="col-sm-4">Validade do meio:</dt>
+        <dd class="col-sm-8"><%= @meio_cultura.validade_meio_cultura %></dd>
+        <dt class="col-sm-4">Fabricate de Meio de Cultura:</dt>
+        <dd class="col-sm-8"><%= @meio_cultura.fabricante_meio_cultura %></dd>
+        <dt class="col-sm-4">Lote de Meio de Cultura</dt>
+        <dd class="col-sm-8"><%= @meio_cultura.lote_meio_cultura %></dd>
+        <dt class="col-sm-4">Quantidade de Meio de Cultura</dt>
+        <dd class="col-sm-8"><%= @meio_cultura.quantidade %></dd>
+        <dt class="col-sm-4">Descrição de Meio de Cultura</dt>
+        <dd class="col-sm-8"><%= @meio_cultura.descricao_meio_cultura %></dd>
+      </dl>
+    </div>
+
+    <div class="card-footer d-flex justify-content-center align-items-center">
+        <%= link_to "Editar Meio de Cultura", edit_meio_cultura_path(@meio_cultura), class: "btn btn-warning mr-2" %>
+    </div>
+  <div>
+</div>
+</div>
+</div>
+<div class="row px-3 py-5">
+  <%= link_to 'Voltar', meios_culturas_path, class: "btn btn-info" %>
+</div>

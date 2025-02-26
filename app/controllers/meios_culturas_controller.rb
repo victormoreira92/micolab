@@ -1,4 +1,4 @@
-class MeioCulturasController < ApplicationController
+class MeiosCulturasController < ApplicationController
   load_and_authorize_resource
 
   # GET /meios_culturas or /meios_culturas.json
@@ -36,7 +36,7 @@ class MeioCulturasController < ApplicationController
     respond_to do |format|
       if @meio_cultura.update(meio_cultura_params)
         flash[:success] = t('activerecord.success.messages.atualizado', model: MeioCultura.model_name.human)
-        format.html { redirect_to meio_cultura_url(@requisicao) }
+        format.html { redirect_to meio_cultura_url(@meio_cultura) }
       else
         flash[:error] = @meio_cultura.errors.full_messages
         format.html { render :edit, status: :unprocessable_entity }
