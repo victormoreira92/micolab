@@ -4,7 +4,8 @@ class AdministradorAbility < PerfilGeralAbility
   ABILITIES_POR_CONTROLLER = {
     "usuarios": 'permissoes_usuarios',
     "unidades_saudes": 'permissoes_unidades_saudes',
-    "requisicoes": 'permissoes_requisicoes'
+    "requisicoes": 'permissoes_requisicoes',
+    "meios_culturas": 'permissoes_meios_culturas'
 
   }.freeze
 
@@ -21,6 +22,10 @@ class AdministradorAbility < PerfilGeralAbility
 
   def permissoes_requisicoes
     can :manage, Requisicao
+  end
+
+  def permissoes_meios_culturas
+    can :manage, MeioCultura
   end
 
 end
