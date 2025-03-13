@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_06_214937) do
+ActiveRecord::Schema[7.0].define(version: 2025_02_26_013609) do
   create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "numero_amostra"
     t.datetime "data_coleta"
@@ -64,6 +64,18 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_06_214937) do
     t.string "nome_material_biologico"
     t.string "sigla"
     t.integer "tipo_material_biologico"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meios_culturas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nome_meio_cultura"
+    t.date "validade_meio_cultura"
+    t.string "descricao_meio_cultura"
+    t.integer "tipo_meio_cultura"
+    t.string "fabricante_meio_cultura"
+    t.string "lote_meio_cultura"
+    t.string "quantidade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

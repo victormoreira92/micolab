@@ -6,7 +6,8 @@ class RequisicoesController < ApplicationController
     @requisicoes = Requisicao.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @requisicao = Requisicao.new
@@ -25,7 +26,8 @@ class RequisicoesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     respond_to do |format|
@@ -34,7 +36,7 @@ class RequisicoesController < ApplicationController
         format.html { redirect_to requisicao_path(@requisicao) }
       else
         flash[:error] = @requisicao.errors.full_messages
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end

@@ -8,11 +8,11 @@
   </td>
 
   <td class="col-2 justify-content-center">
-    <%= f.select :tipo_amostra, options_for_select(tipo_amostra), {}, class: 'form-control', prompt: 'Selecione o tipo de material biológico' %>
+    <%= f.select :tipo_amostra, tipo_amostra, {include_blank: 'Selecione os fatos associados'}, class: 'form-control' %>
   </td>
 
   <td class="col-2 justify-content-center">
-    <%= f.select :material_biologico_id, options_for_select(material_biologico), {}, class: 'form-control', prompt: 'Selecione o tipo de material biológico', class: 'form-control p-1' %>
+    <%= f.select :material_biologico_id, material_biologico, {include_blank: 'Selecione o tipo de material biológico'}, class: 'form-control p-1' %>
   </td>
 
   <td class="col-2 justify-content-center">

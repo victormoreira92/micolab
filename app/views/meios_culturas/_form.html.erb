@@ -1,0 +1,93 @@
+<%= form_with(model: meio_cultura, remote: true, class: 'form-horizontal', id: 'meio-cultura-form') do |form| %>
+   <div class="card-body register-card-body">
+
+      <div class="mb-2">
+
+      <h5 class="text-left"><i class="bi bi-building-fill"></i> Registro de Meio de Cultura</h5>
+        <hr class="mb-4"/>
+
+
+        <div class="row">
+          <div class="input-group mb-3 col-5">
+            <%= form.text_field :nome_meio_cultura, placeholder: 'Nome de Meio de Cultura', class: "form-control", autofocus: true %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-cookie"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-3">
+            <%= form.date_field :validade_meio_cultura, placeholder: 'Validade de Meio de Cultura', class: "form-control", autofocus: true %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-cookie"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-4">
+            <%= form.text_field :fabricante_meio_cultura, placeholder: 'Fabricante de Meio de Cultura', class: "form-control", autofocus: true %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-cookie"></span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="row">
+        
+          <div class="input-group mb-3 col-4">
+            <%= form.text_field :lote_meio_cultura, placeholder: 'Lote de Meio de Cultura', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fs-4 bi-cookie"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-3">
+            <%= form.number_field :quantidade, placeholder: 'Quantidade de Meio de Cultura', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              <span class="fs-4 bi-cookie"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3 col-5">
+            <%= form.select :tipo_meio_cultura, tipo_meio_cultura, {include_blank: 'Selecione o tipo de meio de cultura'}, class: 'form-control'%>
+            <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fs-4 bi-cookie"></span>
+            </div>
+            </div>  
+          </div>
+        </div>
+
+         
+      </div>
+
+        <div class="row">
+          <div class="input-group mb-3 col-12">
+            <%= form.text_area :descricao, cols: 20, rows: 4, placeholder: 'Observações sobre o Meio de Cultura', class: "form-control" %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              <span class="fs-4 bi-cookie"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row py-3">
+          <div class="input-group mb-3 col-12 justify-content-center">
+            <%= form.submit class:'btn btn-success' %>
+          </div>
+        </div>
+
+
+        
+
+<% end %>

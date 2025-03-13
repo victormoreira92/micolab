@@ -1,0 +1,35 @@
+<h3 class="text-center">Listagem de Meio de Culturas</h3>
+
+<%= link_to 'Adicionar Meio de cultura', new_meio_cultura_path, class:'btn btn-success' %>
+
+<div class="row">
+  <div class="col-12">
+    <table id="dttb" class="table table-striped table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>Nome do Meio</th>
+        <th>Tipo de Meio</th>
+        <th>Validade</th>
+        <th>Quantidade</th>
+        <th>Ações</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @meios_culturas.each do |meio_cultura| %>
+        <tr>
+          <td><%= meio_cultura.nome_meio_cultura %></td>
+          <td><%= meio_cultura.tipo_meio_cultura %></td>
+          <td><%= meio_cultura.validade_meio_cultura %></td>
+          <td><%= meio_cultura.quantidade %></td>
+          <td class="d-flex justify-content-around">
+            <%= link_to 'Mostrar Meio', meio_cultura_path(meio_cultura), class:'btn btn-primary fs-6' %>
+            <%= link_to 'Editar Meio', edit_meio_cultura_path(meio_cultura), class:'btn btn-warning fs-6' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

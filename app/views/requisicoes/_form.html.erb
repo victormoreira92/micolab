@@ -22,10 +22,7 @@
       <hr class="mb-4 pb-2"/>
       <%= f.fields_for :informacao_clinica, requisicao.informacao_clinica || requisicao.build_informacao_clinica do |informacao_clinica| %>
         <%= render 'informacao_clinica_fields', f: informacao_clinica %>
-      <% end %>
-        <div class="col-12 d-flex justify-content-center p-3">
-          <%= link_to_add_association 'Adicionar Informação Clínica', f,:informacao_clinica, force_non_association_create: true, class: 'btn btn-warning col-4' %>
-        </div>    
+      <% end %> 
       <h5 class="text-left "><i class="bi bi-droplet-fill"></i> Amostras</h5>
       <hr class="mb-4 pb-2"/>
 
@@ -41,9 +38,11 @@
             </tr>
           </thead>
           <tbody>
-            <%= f.fields_for :amostras do |amostra| %>
-              <%= render 'amostra_fields', f: amostra %>
-            <% end %>
+            
+          <%= f.fields_for :amostras, requisicao.amostras.any? ? requisicao.amostras : requisicao.amostras.build do |amostra| %>
+            <%= render 'amostra_fields', f: amostra %>
+          <% end %>
+
           </tbody>
         </table>
 
