@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_02_26_013609) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_13_183604) do
   create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "numero_amostra"
     t.datetime "data_coleta"
@@ -23,6 +23,26 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_26_013609) do
     t.index ["material_biologico_id"], name: "index_amostras_on_material_biologico_id"
     t.index ["requisicao_id"], name: "index_amostras_on_requisicao_id"
     t.index ["status_amostra_id"], name: "index_amostras_on_status_amostra_id"
+  end
+
+  create_table "amostras_exames", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "amostra_id", null: false
+    t.bigint "exame_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["amostra_id"], name: "index_amostras_exames_on_amostra_id"
+    t.index ["exame_id"], name: "index_amostras_exames_on_exame_id"
+  end
+
+  create_table "exames", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nome_exame"
+    t.string "codigo"
+    t.integer "metodologia"
+    t.text "descricao"
+    t.integer "prazo_liberacao"
+    t.date "data_realizacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "informacoes_clinicas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -171,6 +191,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_26_013609) do
   add_foreign_key "amostras", "materiais_biologicos"
   add_foreign_key "amostras", "requisicoes"
   add_foreign_key "amostras", "status_amostra"
+  add_foreign_key "amostras_exames", "amostras"
+  add_foreign_key "amostras_exames", "exames"
   add_foreign_key "informacoes_clinicas", "requisicoes"
   add_foreign_key "informacoes_domiciliares", "pacientes"
   add_foreign_key "pacientes_unidades_saudes", "pacientes"

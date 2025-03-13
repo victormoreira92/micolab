@@ -1,0 +1,43 @@
+- nome_exame: Micológico Direto
+  metodologia: micologico_direto
+  descricao:  A amostra é tratada com hidróxido de potássio (KOH) ou corantes específicos e analisada ao microscópio para identificar estruturas fúngicas, auxiliando no diagnóstico de micoses superficiais e sistêmicas.
+  codigo: EMD 
+  prazo_liberacao: 7
+
+- nome_exame: Cultura para Fungos
+  metodologia: cultura_fungos
+  descricao:  A amostra é cultivada em meios específicos, como Ágar Sabouraud, e incubada em condições controladas para favorecer o crescimento fúngico. Após o desenvolvimento das colônias, a identificação é feita por meio da análise macroscópica, microscópica e, se necessário, testes bioquímicos ou moleculares.
+  codigo: CUL 
+  prazo_liberacao: 30
+
+- nome_exame: Teste de Sensibilidade de Antifungicos
+  metodologia: automatizado
+  descricao:  Avalia a susceptibilidade de fungos a diferentes medicamentos antifúngicos. 
+  codigo: TSF 
+  prazo_liberacao: 15
+
+- nome_exame: Imunocromatografia de Criptococcus
+  metodologia: diagnostico_imunologico
+  descricao:  Teste qualitativo para a detecção dos antígenos de polissacarídeos capsulares de Cryptococcus 
+  codigo: IMC 
+  prazo_liberacao: 3
+
+- nome_exame: Cultura de Vigilância - Candida auris
+  metodologia: diagnostico_semi_automatizado
+  descricao:  Teste com cultura especifica e automatizado para a identificação de Candida auris.
+  codigo: VGC 
+  prazo_liberacao: 15
+
+- nome_exame: IGE Painel Fungos
+  metodologia: diagnostico_imunologico
+  descricao: Teste de imunológico de painel de fungos Cladosporum, Penicillium, Aspergillus e Alternaria 
+  codigo: PGF
+  prazo_liberacao: 7
+
+- nome_exame: Hemocultura Para Fungos
+  metodologia: cultura_fungos
+  descricao: Hemocultura Para Fungos analises clínicas é um exame laboratorial que avalia amostras biológicas, como sangue, urina, fezes ou tecidos, para diagnosticar doenças e monitorar a saúde.
+  codigo: HEF
+  prazo_liberacao: 7
+
+

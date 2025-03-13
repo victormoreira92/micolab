@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :status_exame do
     etapa { 0 }
-    descricao { "MyString" }
+    descricao { "Em análise" }
   end
 
   trait :sem_etapa do

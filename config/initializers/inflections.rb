@@ -27,5 +27,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular "requisicao", "requisicoes"
   inflect.irregular "meio_cultura", "meios_culturas"
   inflect.irregular 'tipo_meio_cultura', 'tipos_meios_culturas'
-
+  inflect.irregular 'amostra_exame', 'amostras_exames'
 end
