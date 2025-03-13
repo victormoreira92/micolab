@@ -47,9 +47,22 @@ pt-BR:
         lote_meio_cultura: 'Lote de meio de cultura'
         quantidade: 'Quantidade de meio de cultura'
         tipos_meios_culturas:
-          liquido: 'Meio líquido:'
+          liquido: 'Meio líquido'
           solido: 'Meio sólido'
-          semisolido: 'Meio semi-sólido '
+          semisolido: 'Meio semi-sólido'
+      exame:
+        nome_exame: 'Nome de Exame'
+        codigo: 'Código Exame'
+        descricao: 'Descrição'
+        prazo_liberacao: 'Prazo de Liberação'
+        metodologia: 'Metodologia de Exame'
+        data_realizacao: 'Data de Realização de Exame'
+        metodologias:
+          micologico_direto: 'Micológico Direto'
+          cultura_fungos: 'Cultura de Fungos'
+          automatizado: 'Automatizado'
+          diagnostico_imunologico: 'Diagnóstico Imunológico'
+          diagnostico_molecular: 'Diagnóstico Molecular'
     success:
       messages:
         cadastro: '%{model} cadastrado com sucesso'
