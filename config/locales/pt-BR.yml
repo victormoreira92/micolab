@@ -61,6 +61,7 @@ pt-BR:
           micologico_direto: 'Micológico Direto'
           cultura_fungos: 'Cultura de Fungos'
           automatizado: 'Automatizado'
+          diagnostico_semi_automatizado: 'Diagnóstico Semi-Automatizado'
           diagnostico_imunologico: 'Diagnóstico Imunológico'
           diagnostico_molecular: 'Diagnóstico Molecular'
     success:

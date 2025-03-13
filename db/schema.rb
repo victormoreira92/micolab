@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_03_13_171208) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_13_183604) do
   create_table "amostras", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "numero_amostra"
     t.datetime "data_coleta"
@@ -38,13 +38,11 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_13_171208) do
     t.string "nome_exame"
     t.string "codigo"
     t.integer "metodologia"
-    t.string "descricao"
+    t.text "descricao"
     t.integer "prazo_liberacao"
     t.date "data_realizacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "status_exame_id", null: false
-    t.index ["status_exame_id"], name: "index_exames_on_status_exame_id"
   end
 
   create_table "informacoes_clinicas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -195,7 +193,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_13_171208) do
   add_foreign_key "amostras", "status_amostra"
   add_foreign_key "amostras_exames", "amostras"
   add_foreign_key "amostras_exames", "exames"
-  add_foreign_key "exames", "status_exames"
   add_foreign_key "informacoes_clinicas", "requisicoes"
   add_foreign_key "informacoes_domiciliares", "pacientes"
   add_foreign_key "pacientes_unidades_saudes", "pacientes"
