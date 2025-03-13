@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe AmostraExame, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Associações' do
+    it { is_expected.to have_many(:exames) }
+    it { is_expected.to have_many(:amostras) }
+  end
 end
